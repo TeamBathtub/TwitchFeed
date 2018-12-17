@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const auth = require('./routes/auth/auth');
-const twitch = require('./routes/twitch/twitch'); 
+// const twitch = require('./routes/twitch/twitch'); 
 const jwt = require('./jwt');
 
 // enhanced logging
@@ -13,7 +13,8 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-function checkAuth(req, res, next) {
+//don't forget to put checkAuth//
+function (req, res, next) {
   const token = req.get('Authorization');
   console.log('token\n\n', token); 
   if(!token) {
