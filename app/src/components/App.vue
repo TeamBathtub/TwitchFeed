@@ -4,6 +4,10 @@
     <span id="user" v-if="user"> 
       Hello {{user.username}}!
     </span>
+     <nav v-if="user">
+        <RouterLink to="/">Home</RouterLink>
+         <a href="#" @click="handleLogout">Logout</a>
+      </nav>
   </header>
   <main>
      <Auth
