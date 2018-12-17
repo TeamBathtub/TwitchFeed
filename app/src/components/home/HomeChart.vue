@@ -10,15 +10,20 @@ export default {
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: '#f87979',
+            backgroundColor: '#000000',
             data: [40, 20]
+          },
+          {
+            label: 'Data Two',
+            backgroundColor: '#000000',
+            data: [98, 28]
           }
         ]
       }
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false
+      maintainAspectRatio: true
     }
   }),
   mounted() {
