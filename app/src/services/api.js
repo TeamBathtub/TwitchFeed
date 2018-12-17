@@ -17,7 +17,7 @@ const getOptions = (method, data) => {
 };
 
 export default {
-  
+
   setToken(t) {
     token = t;
   },
@@ -34,6 +34,7 @@ export default {
           });
       });
   }, 
+
   signIn(credentials) {
     return fetch('/api/auth/signin', getOptions ('POST', credentials))
       .then(response => {
@@ -46,4 +47,14 @@ export default {
           });
       });
   },
+
+  getStreamers(searchTerm = '') {
+    return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y'
+      }
+    })
+      .then(response => response.json());
 };
