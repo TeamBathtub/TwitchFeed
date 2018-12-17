@@ -9,10 +9,6 @@
           <input v-model="profile.username" required>
         </label>
         <label>
-          Email:
-          <input v-model="profile.email" required> 
-        </label>
-        <label>
           Password:
           <input v-model="profile.password" required> 
         </label>
