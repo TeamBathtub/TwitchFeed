@@ -4,13 +4,11 @@
     <span id="user" v-if="user"> 
       Hello {{user.username}}!
     </span>
-     <nav v-if="user">
-        <RouterLink to="/">Home</RouterLink>
-         <a href="#" @click="handleLogout">Logout</a>
-      </nav>
   </header>
   <main>
-     <Auth
+    <!--Need to add in user v-if in RouterLink and Auth-->
+    <RouterView></RouterView>
+     <Auth 
         :onSignUp="handleSignUp"
         :onSignIn="handleSignIn"
       />
