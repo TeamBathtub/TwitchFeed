@@ -20,7 +20,6 @@ export default {
   setToken(t) {
     token = t;
   },
-
   getTopStreamers() {
     return fetch('/api/twitch', {
       method: 'GET',

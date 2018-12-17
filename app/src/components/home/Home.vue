@@ -28,7 +28,7 @@ export default {
     BarChart
   },
   created() {
-    api.getStreamers()
+    api.getTopStreamers()
       .then(response => this.streams = response);
   }
 };
