@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TeamBathtub/TwitchFeed/issues"
   },
-  "homepage": "https://github.com/TeamBathtub/TwitchFeed#readme"
+  "homepage": "https://github.com/TeamBathtub/TwitchFeed#readme",
+  "dependencies": {
+    "eslint": "^5.10.0"
+  }
 }

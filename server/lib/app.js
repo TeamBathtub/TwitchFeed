@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const twitch = require('./routes/twitch/twitch');
 const auth = require('./routes/auth/auth');
 // const twitch = require('./routes/twitch/twitch'); 
 // const jwt = require('./jwt');
@@ -8,11 +9,11 @@ const auth = require('./routes/auth/auth');
 // enhanced logging
 app.use(morgan('dev'));
 
-// register the json "middleware" body parser
 app.use(express.json());
 
 app.use(express.static('public'));
 
+app.use('/api/twitch', twitch);
 //don't forget to put checkAuth//
 // function checkAuth(req, res, next) {
 //   const token = req.get('Authorization');
