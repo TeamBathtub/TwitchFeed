@@ -68,6 +68,22 @@ export default {
         password: ''
       } 
     };
+  }, 
+  methods: {
+    handleSignInSubmit() {
+      this.error = '',
+      this.onSignIn(this.profile)
+        .catch(error => {
+          this.error = error.error;
+        });
+    },
+    handleSignUpSubmit() {
+      this.error = '';
+      this.onSignUp(this.profile)
+        .catch(error => {
+          this.error = error.error;
+        });
+    }
   }
 };
 </script>
