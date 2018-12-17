@@ -9,8 +9,9 @@
      <a href="#" @click="handleLogout">Logout</a>
    </nav>
     <div>
-        <BarChart/>
-        <div v-if="streams"> {{ streams }} </div>
+        <BarChart
+        :streams="streams"
+        />
     </div>
    </section>
 </template>
