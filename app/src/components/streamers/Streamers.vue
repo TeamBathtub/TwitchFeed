@@ -1,5 +1,13 @@
 <template>
   <section class="streamers">
+    <nav v-if="user">
+     <RouterLink to="/">Home</RouterLink>
+     <RouterLink to="/favorites">Favorites</RouterLink>
+     <RouterLink to="/streamers">Search</RouterLink>
+     <RouterLink to="/ratings">Ratings</RouterLink>
+     <RouterLink to="/about">About Us</RouterLink>
+     <a href="#" @click="handleLogout">Logout</a>
+   </nav>
     <h2>Search by Streamer Name</h2>
 
     <StreamerSearch v-bind:onSearch="handleSearch" v-bind:search="search"/>

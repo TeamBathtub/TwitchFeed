@@ -17,6 +17,10 @@ const getOptions = (method, data) => {
 };
 
 export default {
+  setToken(t) {
+    token = t;
+  },
+
   getTopStreamers() {
     return fetch('/api/twitch', {
       method: 'GET',
@@ -26,11 +30,6 @@ export default {
       }
     })
       .then(response => response.json());
-  }
-};
-
-  setToken(t) {
-    token = t;
   },
 
   signUp(profile) {
