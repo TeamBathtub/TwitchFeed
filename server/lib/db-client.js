@@ -1,3 +1,4 @@
+require('dotenv').config();
 const pg = require('pg');
 
 const DATABASE_URL = process.env.DATABASE_URL;
