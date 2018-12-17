@@ -1,8 +1,8 @@
 /*eslint-disable-next-line*/
 const router = require('express').Router(); 
-const client = require('../db-client');
+const client = require('../../db-client');
 const bcrypt = require('bcryptjs');
-const jwt = require('../jwt');
+const jwt = require('../../jwt');
 
 
 function getProfileWithToken(profile) {
