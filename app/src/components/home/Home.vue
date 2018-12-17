@@ -1,3 +1,16 @@
 <template>
- <h1> HELLO </h1>
+    <HomeChart/>
 </template>
+
+<script>
+import HomeChart from './HomeChart';
+export default {
+  components: {
+    HomeChart
+  }
+};
+</script>
+
+<style>
+
+</style>
