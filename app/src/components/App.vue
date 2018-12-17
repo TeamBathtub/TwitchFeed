@@ -46,7 +46,24 @@ export default {
           this.setUser(user);
         });
     },
+  }, 
+  setUser(user) {
+    this.user = user;
+    console.log(user);
+    if(user) {
+      api.setToken(user.token);
+      window.localStorage.setItem('profile', JSON.stringify(user));                                     
+    }
+    else {
+      api.setToken();
+      window.localStorage.removeItem('profile');
+    }
+  },
+  handleLogout() {
+    this.setUser(null);
+    this.$router.push('/');
   }
 };
+
 </script>
 
