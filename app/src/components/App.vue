@@ -2,11 +2,13 @@
  <div id="app">
    <RouterView></RouterView>
    {{result}}
+   <Home/>
  </div>
 </template>
 
 <script>
 import api from '../services/api';
+import Home from './home/Home';
 export default {
   data() {
     return {
@@ -16,6 +18,9 @@ export default {
   created() {
     api.test()
       .then(result => this.result = result);
+  },
+  components: {
+    Home
   }
 };
 </script>
