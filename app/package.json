@@ -1,6 +1,6 @@
 {
-  "name": "twitchfeed",
-  "version": "1.0.0",
+  "name": "project-app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
