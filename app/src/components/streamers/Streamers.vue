@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <Top100 v-bind:top100="top100"></Top100>
+    <!-- <Top100 v-bind:results="results"></Top100> -->
 
   </section>
 </template>
@@ -21,12 +21,13 @@
 import api from '../../services/api.js';
 import Streamer from './Streamer.vue';
 import StreamerSearch from './StreamerSearch.vue';
-import Top100 from './Top100.vue';
+// import Top100 from './Top100.vue';
 
 export default {
   data() {
     const search = this.$route.query.search;
     return {
+      results: null,
       streamers: null,
       filteredStreamers: [],
       search: search ? decodeURIComponent(this.$route.query.search) : ''
@@ -35,10 +36,12 @@ export default {
   components: {
     Streamer,
     StreamerSearch,
-    Top100
+    // Top100
   },
   created() {
     this.searchStreamers();
+    // api.getTop100()
+    //   .then(results => this.results = results);
   },
   watch: {
     $route(newRoute) {

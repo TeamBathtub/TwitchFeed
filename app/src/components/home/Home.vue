@@ -7,11 +7,15 @@
         :viewerCounts="viewerCounts"
         />
     </div>
+    <div>
+      <!-- <StreamsList :streams="streams" /> -->
+    </div>
    </section>
 </template>
 
 <script>
 import BarChart from './BarChart';
+// import StreamsList from './StreamsList';
 import api from '../../services/api';
 export default {
   data() {
@@ -24,6 +28,7 @@ export default {
   },
   components: {
     BarChart
+    // StreamsList
   },
   created() {
     api.getTopStreamers()
