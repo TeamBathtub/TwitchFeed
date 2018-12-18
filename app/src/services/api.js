@@ -66,6 +66,10 @@ export default {
       }
     })
       .then(response => response.json());
+  },
+
+  getTop100() {
+    
   }
 };
 

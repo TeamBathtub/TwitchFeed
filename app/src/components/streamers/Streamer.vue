@@ -1,8 +1,16 @@
 <template>
   <li>
-    <RouterLink class="list" v-bind:to="`/streamers/${streamer.id}`">
+    <p>Name:
       {{streamer.login}}
-    </RouterLink>
+    </p>
+    <p>Description:
+      {{streamer.description}}
+    </p>
+    <p>View Count:
+      {{streamer.view_count}}
+    </p>
+    <img v-bind:src="streamer.profile_image_url">
+
   </li>
 </template>
 
