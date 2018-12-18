@@ -1,13 +1,5 @@
 <template>
   <section>
-    <nav v-if="user">
-     <RouterLink to="/">Home</RouterLink>
-     <RouterLink to="/favorites">Favorites</RouterLink>
-     <RouterLink to="/streamers">Search</RouterLink>
-     <RouterLink to="/ratings">Ratings</RouterLink>
-     <RouterLink to="/about">About Us</RouterLink>
-     <a href="#" @click="handleLogout">Logout</a>
-   </nav>
     <div>
         <BarChart/>
         <div v-if="streams"> {{ streams }} </div>
@@ -21,7 +13,8 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      streams: null
+      streams: null,
+      user: null
     };
   },
   components: {
