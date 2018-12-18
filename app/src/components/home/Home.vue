@@ -1,8 +1,11 @@
 <template>
   <section>
     <div>
-        <BarChart/>
-        <div v-if="streams"> {{ streams }} </div>
+        <BarChart
+        v-if="labels && viewerCounts" 
+        :labels="labels"
+        :viewerCounts="viewerCounts"
+        />
     </div>
    </section>
 </template>
@@ -14,6 +17,8 @@ export default {
   data() {
     return {
       streams: null,
+      labels: null,
+      viewerCounts: null
       user: null
     };
   },
@@ -22,7 +27,26 @@ export default {
   },
   created() {
     api.getTopStreamers()
-      .then(response => this.streams = response);
+      .then(response => {
+        console.log('response', response);
+        return this.streams = response;
+      
+      })
+      .then(() => this.labels = this.getLabels())
+      .then(() => this.viewerCounts = this.getViewerCounts());
+       
+  },
+  methods: {
+    getLabels() {
+      return this.streams.map(stream => {
+        return stream.user_name;
+      });
+    },
+    getViewerCounts() {
+      return this.streams.map(stream => {
+        return stream.viewer_count;
+      });
+    }
   }
 };
 </script>

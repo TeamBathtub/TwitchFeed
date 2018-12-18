@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
       console.log('response', response.body);
       const twitchResults = response.body.data.map(stream => {
         return {
-          name: stream.user_id
+          user_name: stream.user_name,
+          viewer_count: stream.viewer_count
         };
       });
       res.json(twitchResults);
