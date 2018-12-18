@@ -1,5 +1,6 @@
 <template>
-  
+  <ul>
+  </ul>
 </template>
 
 <script>

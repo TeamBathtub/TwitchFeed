@@ -18,7 +18,7 @@ export default {
     return {
       streams: null,
       labels: null,
-      viewerCounts: null
+      viewerCounts: null,
       user: null
     };
   },
