@@ -1,6 +1,7 @@
 {
-  "name": "twitchfeed",
+  "name": "TwitchFeed",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/TeamBathtub/TwitchFeed.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TeamBathtub/TwitchFeed/issues"
   },
-  "homepage": "https://github.com/TeamBathtub/TwitchFeed#readme",
-  "dependencies": {
-    "eslint": "^5.10.0"
-  }
+  "homepage": "https://github.com/TeamBathtub/TwitchFeed#readme"
 }
