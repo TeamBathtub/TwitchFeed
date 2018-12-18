@@ -41,12 +41,14 @@ router.post('/signup', (req, res) => {
       client.query(`
         INSERT into profile (
           username, 
+          first_name, 
+          email,
           hash
         )
-        VALUES ($1, $2)
-        RETURNING *;
+        VALUES ($1, $2, $3, $4)
+        RETURNING username, first_name as "firstName", email, hash;
       `,
-      [username, bcrypt.hashSync(password, 8)]
+      [username, body.firstName, body.email, bcrypt.hashSync(password, 8)]
       )
         .then(result => {
           const profile = result.rows[0];

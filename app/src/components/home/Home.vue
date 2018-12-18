@@ -1,13 +1,5 @@
 <template>
   <section>
-    <nav v-if="user">
-     <RouterLink to="/">Home</RouterLink>
-     <RouterLink to="/favorites">Favorites</RouterLink>
-     <RouterLink to="/streamers">Search</RouterLink>
-     <RouterLink to="/ratings">Ratings</RouterLink>
-     <RouterLink to="/about">About Us</RouterLink>
-     <a href="#" @click="handleLogout">Logout</a>
-   </nav>
     <div>
         <BarChart
         v-if="labels && viewerCounts" 
@@ -27,6 +19,7 @@ export default {
       streams: null,
       labels: null,
       viewerCounts: null
+      user: null
     };
   },
   components: {
