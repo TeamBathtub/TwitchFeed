@@ -10,7 +10,7 @@
    </nav>
     <div>
         <BarChart
-        v-if="streams"
+        v-if="labels && viewerCounts" 
         :labels="labels"
         :viewerCounts="viewerCounts"
         />

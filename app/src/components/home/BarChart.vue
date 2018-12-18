@@ -5,7 +5,6 @@ import { Bar } from './BaseCharts';
 
 export default {
   props: {
-    streams: Array,
     labels: Array,
     viewerCounts: Array
   },
@@ -21,6 +20,9 @@ export default {
         },
       ]
     }, { responsive: true, maintainAspectRatio: false });
+  },
+  watch: {
+    
   }
 };
 </script>
