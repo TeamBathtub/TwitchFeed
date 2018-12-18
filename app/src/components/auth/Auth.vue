@@ -1,6 +1,9 @@
 <template>
-  <section>
-    <div v-if="method === 'signin'">
+  <section class="wrapper">
+    <div class="video-wrap">
+      <video src="../../../clouds.mp4" autoplay loop=""></video>
+    </div>
+    <div class="overlay" v-if="method === 'signin'">
       <h1> Welcome to Twitch Feed </h1>
       <h2>Sign In</h2>
       <form @submit.prevent="handleSignInSubmit(profile)">
@@ -19,7 +22,7 @@
         <button @click="method = 'signup'"> Sign Up </button>
         </p>
     </div>
-      <div v-else>
+      <div class="overlay" v-else>
         <h2>Sign Up</h2>
         <form @submit.prevent="handleSignUpSubmit(profile)"> 
         <label>
@@ -83,3 +86,40 @@ export default {
   }
 };
 </script>
+<style>
+body {
+  font-size: 40pt;
+  color:rgb(255, 255, 255);
+}
+
+section {
+  text-align: center;
+}
+.wrapper {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.video-wrap {
+  position: fixed;
+  left: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  object-fit: fill;
+  opacity: .3;
+  z-index: 1;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%; 
+  background-color: rgba(0,0,0,.7);
+  opacity: .6;
+}
+</style>
