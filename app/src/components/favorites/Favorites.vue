@@ -1,5 +1,11 @@
 <template>
-  <h1>I am FAVORITES</h1>
+<section>
+  <h1>Favorite Streamers</h1>
+  <div>
+    <ul>
+    </ul>
+  </div>
+</section>
 </template>
 
 <script>
