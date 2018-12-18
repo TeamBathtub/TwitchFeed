@@ -10,7 +10,9 @@
    </nav>
     <div>
         <BarChart
-        :streams="streams"
+        v-if="streams"
+        :labels="labels"
+        :viewerCounts="viewerCounts"
         />
     </div>
    </section>
@@ -22,7 +24,9 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      streams: null
+      streams: null,
+      labels: null,
+      viewerCounts: null
     };
   },
   components: {
@@ -30,7 +34,26 @@ export default {
   },
   created() {
     api.getTopStreamers()
-      .then(response => this.streams = response);
+      .then(response => {
+        console.log('response', response);
+        return this.streams = response;
+      
+      })
+      .then(() => this.labels = this.getLabels())
+      .then(() => this.viewerCounts = this.getViewerCounts());
+       
+  },
+  methods: {
+    getLabels() {
+      return this.streams.map(stream => {
+        return stream.user_name;
+      });
+    },
+    getViewerCounts() {
+      return this.streams.map(stream => {
+        return stream.viewer_count;
+      });
+    }
   }
 };
 </script>

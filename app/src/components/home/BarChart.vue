@@ -5,17 +5,19 @@ import { Bar } from './BaseCharts';
 
 export default {
   props: {
-    streams: Array
+    streams: Array,
+    labels: Array,
+    viewerCounts: Array
   },
-  extends: Bar,
+  extends: Bar, 
   mounted() {
     this.renderChart({
-      labels: ['Ninja', 'DrDisrespect'],
+      labels: this.labels,
       datasets: [
         {
           label: 'Viewers',
           backgroundColor: '#f87979',
-          data: [40, 20]
+          data: this.viewerCounts
         },
       ]
     }, { responsive: true, maintainAspectRatio: false });
