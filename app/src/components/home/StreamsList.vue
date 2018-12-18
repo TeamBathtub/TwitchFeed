@@ -4,8 +4,7 @@
     v-for="(stream, index) in streams">
       <li>
         <h3>#{{index + 1}} {{stream.user_name}}</h3>
-        <p>Number of Viewers: {{stream.view_count}}</p>
-        <!-- <p>Stream Type: {{twitchResult.streamType}}</p> -->
+        <p>Number of Viewers: {{stream.viewer_count}}</p>
       </li>
     </ul>
   </section>
