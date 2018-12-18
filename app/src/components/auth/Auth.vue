@@ -85,7 +85,7 @@ export default {
 };
 </script>
 <style>
-body {
+/* body {
   font-size: 40pt;
   color:rgb(255, 255, 255);
 }
@@ -119,5 +119,5 @@ section {
   left: 0;
   background-color: rgba(103, 17, 129, 0.221);
   opacity: .6;
-}
+} */
 </style>
