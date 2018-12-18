@@ -78,6 +78,20 @@ export default {
       }
     })
       .then(response => response.json());
+  },
+  addStreamer(streamer) {
+    return fetch('/api/favorite', getOptions('POST', streamer))
+      .then(response => response.json());
+  },
+  deleteStreamer(id) {
+    return fetch(`/api/favorite/${id}`, {
+      method: 'DELETE'
+    })
+      .then(response => response.json());
+  }, 
+  getStreamer(id) {
+    return fetch(`/api/profile/${id}`)
+      .then(response => response.json()); 
   }
 };
 

@@ -5,7 +5,7 @@
     <button class="close" @click="onClose">X</button>
             <h2>Display Name : {{stream.user_name}}</h2>
             <h3>Number of View Counts: {{stream.viewer_count}}</h3>
-            <button> Add to Favorites </button>
+            <button :onSubmit="handleAdd"> Add to Favorites </button>
     </div>
   </div>
  </transition>
@@ -15,6 +15,8 @@
 export default {
   props: {
     onClose: Function, 
+    onSubmit: Function,
+    onAdd: Function,
     stream: Object
   },
   data() {
@@ -36,6 +38,11 @@ export default {
   },
   destroyed() {
     document.removeEventListener('keyup', this.documentListener);
+  },
+  methods: {
+    handleAdd(streamer) {
+      return this.onAdd(streamer);
+    }
   }
 };
 </script>

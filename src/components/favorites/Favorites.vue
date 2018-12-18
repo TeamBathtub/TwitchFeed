@@ -9,11 +9,14 @@
 </template>
 
 <script>
-export default {
+import api from '../../services/api';
 
+export default {
+  created() {
+    api.getStreamer(this.$route.params.id)
+      .then(streamer => {
+        this.streamer = streamer; 
+      });
+  }
 };
 </script>
-
-<style>
-
-</style>
