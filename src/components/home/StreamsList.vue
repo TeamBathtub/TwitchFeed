@@ -1,18 +1,22 @@
 <template>
   <section>
-    <ul v-bind:key="index"
-    v-for="(stream, index) in streams">
-      <li>
-        <h3>#{{index + 1}} {{stream.user_name}}</h3>
-        <p>Number of Viewers: {{stream.viewer_count}}</p>
-        <button>View Details</button>
-      </li>
+    <ul>
+    <li>
+      <StreamerItem v-for="(stream, index) in streams"
+      :key="index"
+      :stream="stream"/>
+    </li>
     </ul>
   </section>
 </template>
 
 <script>
+import StreamerItem from './StreamerItem';
+
 export default {
+  components: {
+    StreamerItem
+  },
   props: {
     streams: Array
   }
@@ -25,12 +29,13 @@ export default {
     display: grid;
   }
   li {
-    border: 2px solid black;
-    box-shadow: 2px 2px 2px darkgray;
     padding: 10px;
   }
   h3 {
     text-align: center;
   }
-
+  button {
+    position: relative;
+    left: 45%;
+  }
 </style>
