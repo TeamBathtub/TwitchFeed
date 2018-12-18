@@ -21,10 +21,39 @@ export default {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    align-items: center;
     width: 100px;
+    background-color: slateblue;
+    padding: 2vw;
+    color: white;
+    border: gray outset 7px;
+}
+h2 {
+  font-size: 20px;
+}
+a {
+  color: white;
+  background-color: rgba(178, 178, 178, 0.6);
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 8px;
+  margin: 1vh;
+  text-align: center;
+  border: gray 2px solid;
+}
+a:hover {
+  color: white;
+  background-color: rgb(178, 178, 178);
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 8px;
+  margin: 1vh;
+  text-align: center;
+  border-color: yellow;
 }
 img {
     width: 100%;
     height: 100%;
+    border: black solid 5px;
 }
 </style>
