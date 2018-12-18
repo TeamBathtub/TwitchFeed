@@ -12,7 +12,8 @@
       </ul>
     </div>
 
-    <Top100 v-bind:results="results"></Top100>
+    <h2>View Top 100 Streamers</h2>
+    <Top100 class="grid" v-bind:results="results"></Top100>
 
   </section>
 </template>
@@ -22,7 +23,6 @@ import api from '../../services/api.js';
 import Streamer from './Streamer.vue';
 import StreamerSearch from './StreamerSearch.vue';
 import Top100 from './Top100.vue';
-
 export default {
   data() {
     const search = this.$route.query.search;
@@ -41,7 +41,8 @@ export default {
   created() {
     this.searchStreamers();
     api.getTop100()
-      .then(results => this.results = results);
+      .then(response => 
+        this.results = response.data);
   },
   watch: {
     $route(newRoute) {
@@ -67,3 +68,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+h2 {
+  text-align: center;
+}
+section {
+  padding: 20px;
+}
+</style>
