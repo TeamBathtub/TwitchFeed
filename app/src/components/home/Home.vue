@@ -21,7 +21,8 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      streams: null
+      streams: null,
+      user: null
     };
   },
   components: {

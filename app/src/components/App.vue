@@ -7,8 +7,8 @@
   </header>
   <main>
     <!--Need to add in user v-if in RouterLink and Auth-->
-    <RouterView></RouterView>
-     <Auth 
+    <RouterView v-if="user" :user="user"></RouterView>
+     <Auth v-else
         :onSignUp="handleSignUp"
         :onSignIn="handleSignIn"
       />
@@ -36,34 +36,36 @@ export default {
   },
   methods: {
     handleSignUp(profile) {
+      console.log('giggles', profile);
       return api.signUp(profile)
         .then(user => {
           this.setUser(user);
         });
     },
     handleSignIn(credentials) {
+      console.log('cred', credentials);
       return api.signIn(credentials)
         .then(user => {
           console.log(user);
           this.setUser(user);
         });
     },
-  }, 
-  setUser(user) {
-    this.user = user;
-    console.log(user);
-    if(user) {
-      api.setToken(user.token);
-      window.localStorage.setItem('profile', JSON.stringify(user));                                     
+    setUser(user) {
+      this.user = user;
+      console.log(user);
+      if(user) {
+        api.setToken(user.token);
+        window.localStorage.setItem('profile', JSON.stringify(user));                                     
+      }
+      else {
+        api.setToken();
+        window.localStorage.removeItem('profile');
+      }
+    },
+    handleLogout() {
+      this.setUser(null);
+      this.$router.push('/');
     }
-    else {
-      api.setToken();
-      window.localStorage.removeItem('profile');
-    }
-  },
-  handleLogout() {
-    this.setUser(null);
-    this.$router.push('/');
   }
 };
 

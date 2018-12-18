@@ -12,8 +12,8 @@
           Password:
           <input v-model="profile.password" required> 
         </label>
-        </form>
-        <button> Sign In </button>
+          <button> Sign In </button>
+    </form>
          <p>
         Need to Register?
         <button @click="method = 'signup'"> Sign Up </button>
@@ -24,19 +24,19 @@
         <form @submit.prevent="handleSignUpSubmit(profile)"> 
         <label>
           Name:
-          <input v-model="profile.name" required>
+          <input v-model="profile.firstName" required>
         </label>
         <label>
           Username:
-          <input type="password" v-model="profile.username" required>
+          <input v-model="profile.username" required>
         </label>
         <label>
           Email:
-          <input type="password" v-model="profile.email" required>
+          <input v-model="profile.email" required>
         </label>
         <label>
           Password:
-          <input type="password" v-model="profile.password" required>
+          <input  v-model="profile.password" required>
         </label>
         <label>
           <button>Sign Up</button>
@@ -58,9 +58,9 @@ export default {
       method: 'signin',
       error: '',
       profile: {
-        name: '',
-        email: '',
         username: '',
+        firstName: '',
+        email: '',
         password: ''
       } 
     };
