@@ -1,20 +1,61 @@
 {
-  "name": "TwitchFeed",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "project-app",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "npm run serve",
+    "build:prod": "npm run build && rm -rf ../server/public && cp -R dist ../server/public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TeamBathtub/TwitchFeed.git"
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "chartjs": "^0.3.24",
+    "vue": "^2.5.17",
+    "vue-chartjs": "^3.4.0",
+    "vue-router": "^3.0.2"
   },
-  "keywords": [],
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.1",
+    "@vue/cli-service": "^3.2.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "postcss-cli": "^6.0.1",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.0",
+    "postcss-simple-vars": "^5.0.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TeamBathtub/TwitchFeed/issues"
-  },
-  "homepage": "https://github.com/TeamBathtub/TwitchFeed#readme"
+  "license": "ISC"
 }
