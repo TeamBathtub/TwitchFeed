@@ -47,14 +47,13 @@ export default {
   signIn(credentials) {
     return fetch('/api/auth/signin', getOptions ('POST', credentials))
       .then(response => {
-        return response.json();
-        // if(response.ok) {
-        //   return response.json();
-        // }
-        // return response.json()
-        //   .then(error => {
-        //     return Promise.reject(error);
-        //   });
+        if(response.ok) {
+          return response.json();
+        }
+        return response.json()
+          .then(error => {
+            return Promise.reject(error);
+          });
       });
   },
 

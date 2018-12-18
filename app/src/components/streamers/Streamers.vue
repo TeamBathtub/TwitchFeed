@@ -51,7 +51,7 @@ export default {
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
-          this.streamers = response.user_name;
+          this.streamers = response.data;
         })
         .catch(err => {
           this.error = err.message;
