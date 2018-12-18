@@ -1,12 +1,19 @@
 <template>
-  
+  <section>
+    <ul v-bind:key="index"
+    v-for="(result, index) in results">
+      <li>
+        <h3>#{{index + 1}} {{result.name}}</h3>
+        <p>Number of Viewers: {{result.views}}</p>
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script>
-import api from '../../services/api.js';
 export default {
-  created() {
-    api.getTop100();
+  props: {
+    results: Array
   }
 };
 </script>

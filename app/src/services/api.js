@@ -25,7 +25,8 @@ export default {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y'
+        'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y',
+        'Authorization': token
       }
     })
       .then(response => response.json());
@@ -69,7 +70,23 @@ export default {
   },
 
   getTop100() {
-    
+    return fetch('https://api.twitch.tv/helix/streams?first=100', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y'
+      }
+    })
+      .then(response => {
+        const results = response.body.data.map(result => {
+          return {
+            name: result.user_name,
+            views: result.viewer_count,
+            index: result.index
+          };
+        });
+        response.json(results);
+      });
   }
 };
 

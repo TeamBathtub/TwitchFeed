@@ -60,7 +60,7 @@ export default {
     },
     setUser(user) {
       this.user = user;
-      console.log(user);
+      console.log('set user', user);
       if(user) {
         api.setToken(user.token);
         window.localStorage.setItem('profile', JSON.stringify(user));                                     
