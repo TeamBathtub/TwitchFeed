@@ -2,6 +2,7 @@
     <div id="randomStreamer">
       <h2>{{ randomName }}</h2>
       <img :src="randomThumbnail">
+      <a :href="url">View Stream</a>
     </div>
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   props: {
     randomName: String,
-    randomThumbnail: String
+    randomThumbnail: String,
+    url: String
   },
 };
 </script>

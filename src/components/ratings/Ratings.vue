@@ -6,6 +6,7 @@
     v-if="randomName"
     :randomName="randomName"
     :randomThumbnail="randomThumbnail"
+    :url="url"
     />
   </section>
 </template>
@@ -19,7 +20,8 @@ export default {
       streams: null,
       labels: null,
       randomName: null,
-      randomThumbnail: null
+      randomThumbnail: null,
+      url: null
     };
   },
   created() {
@@ -39,6 +41,7 @@ export default {
       let index = Math.floor((Math.random() * this.streams.length) + 1);
       this.randomName = this.labels[index];
       this.getStreamerThumbnail();
+      this.makeUrl();
     },
     getStreamerThumbnail() {
       api.getStreamers(this.randomName)
@@ -49,6 +52,9 @@ export default {
           this.error = err.message;
         });
     },
+    makeUrl() {
+      return this.url = 'https://www.twitch.tv/' + this.randomName;
+    }
   
   },
   components: {
