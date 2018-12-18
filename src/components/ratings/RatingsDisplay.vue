@@ -22,7 +22,7 @@ export default {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 300px;
     background-color: slateblue;
     padding: 2vw;
     color: white;
@@ -30,6 +30,9 @@ export default {
 }
 h2 {
   font-size: 20px;
+  background-color: gray;
+  padding: 10px;
+  border: gray outset 4px;
 }
 a {
   color: white;
