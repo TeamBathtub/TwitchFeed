@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "npm run serve",
-    "build:prod": "npm run build && rm -rf ../server/public && cp -R dist ../server/public"
+    "build:prod": "npm run build && rm -rf ../TwitchFeed-Server/public && cp -R dist ../TwitchFeed-Server/public"
   },
   "dependencies": {
     "chart.js": "^2.7.3",
