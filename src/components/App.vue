@@ -3,9 +3,10 @@
   <header> 
     <nav v-if="user">
      <RouterLink to="/">Home</RouterLink>
-     <RouterLink to="/favorites">Favorites</RouterLink>
      <RouterLink to="/search">Search</RouterLink>
+     <RouterLink to="/favorites">Favorites</RouterLink>
      <RouterLink to="/ratings">Ratings</RouterLink>
+     <RouterLink to="/community">Community</RouterLink>
      <RouterLink to="/about">About Us</RouterLink>
      <a href="#" @click="handleLogout">Logout</a>
    </nav>
