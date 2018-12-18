@@ -79,3 +79,25 @@ export default {
 
 </script>
 
+<style>
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: purple;
+  padding: 2vh;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3vh;
+}
+nav a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+body {
+  margin: 0;
+}
+
+</style>
