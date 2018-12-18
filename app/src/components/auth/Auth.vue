@@ -1,7 +1,6 @@
 <template>
   <section class="wrapper">
     <div class="video-wrap">
-      <video src="../../../video.mp4" autoplay loop=""></video>
     </div>
     <div class="overlay" v-if="method === 'signin'">
       <h1> Welcome to Twitch Feed </h1>
@@ -118,7 +117,7 @@ section {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.7);
-  opacity: .8;
+  background-color: rgba(103, 17, 129, 0.221);
+  opacity: .6;
 }
 </style>
