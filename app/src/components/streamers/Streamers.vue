@@ -63,7 +63,6 @@ export default {
         })
         .catch(err => {
           this.error = err.message;
-          this.people = null;
         });
     }
   }
