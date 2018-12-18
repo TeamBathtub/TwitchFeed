@@ -12,6 +12,8 @@
       </ul>
     </div>
 
+    <Top100 v-bind:top100="top100"></Top100>
+
   </section>
 </template>
 
@@ -19,6 +21,7 @@
 import api from '../../services/api.js';
 import Streamer from './Streamer.vue';
 import StreamerSearch from './StreamerSearch.vue';
+import Top100 from './Top100.vue';
 
 export default {
   data() {
@@ -31,7 +34,8 @@ export default {
   },
   components: {
     Streamer,
-    StreamerSearch
+    StreamerSearch,
+    Top100
   },
   created() {
     this.searchStreamers();
@@ -51,11 +55,10 @@ export default {
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
-          this.streamers = response.user_name;
+          this.streamers = response.data;
         })
         .catch(err => {
           this.error = err.message;
-          this.people = null;
         });
     }
   }

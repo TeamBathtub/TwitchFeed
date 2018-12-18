@@ -1,8 +1,16 @@
 <template>
   <li>
-    <RouterLink class="list" v-bind:to="`/streamers/${streamer.id}`">
-      {{streamer.name}}
-    </RouterLink>
+    <p>Name:
+      {{streamer.login}}
+    </p>
+    <p>Description:
+      {{streamer.description}}
+    </p>
+    <p>View Count:
+      {{streamer.view_count}}
+    </p>
+    <img v-bind:src="streamer.profile_image_url">
+
   </li>
 </template>
 
@@ -13,8 +21,3 @@ export default {
   }
 };
 </script>
-
-https://api.twitch.tv/helix/streams
-
-client-ID=
-Content Type
