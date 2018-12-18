@@ -5,7 +5,7 @@
       <li>
         <h3>#{{index + 1}} {{stream.user_name}}</h3>
         <p>Number of Viewers: {{stream.viewer_count}}</p>
-        <button>Add to Favorites</button>
+        <button>View Details</button>
       </li>
     </ul>
   </section>
