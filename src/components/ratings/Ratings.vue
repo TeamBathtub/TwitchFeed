@@ -8,12 +8,15 @@
     :randomThumbnail="randomThumbnail"
     :url="url"
     />
+    <RatingsForm/>
   </section>
 </template>
 
 <script>
 import api from '../../services/api';
 import RatingsDisplay from './RatingsDisplay';
+import RatingsForm from './RatingsForm';
+
 export default {
   data() {
     return {
@@ -58,7 +61,8 @@ export default {
   
   },
   components: {
-    RatingsDisplay
+    RatingsDisplay,
+    RatingsForm
   }
 };
 </script>
