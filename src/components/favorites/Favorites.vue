@@ -2,21 +2,24 @@
 <section>
   <h1>Favorite Streamers</h1>
   <div>
-    <ul>
-    </ul>
+    <li>
+    <FavoriteItem v-for="streamer in streamers"
+    :key="streamer"
+    :streamer="streamer"/>
+    </li>
   </div>
 </section>
 </template>
 
 <script>
-import api from '../../services/api';
+import FavoriteItem from './FavoriteItem';
 
 export default {
-  created() {
-    api.getStreamer(this.$route.params.id)
-      .then(streamer => {
-        this.streamer = streamer; 
-      });
+  components: {
+    FavoriteItem
+  },
+  props: {
+    streamer: Object
   }
 };
 </script>
