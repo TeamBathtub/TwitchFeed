@@ -20,7 +20,7 @@
 import api from '../../services/api';
 import RatingsDisplay from './RatingsDisplay';
 import RatingsForm from './RatingsForm';
-
+//test
 export default {
   data() {
     return {
