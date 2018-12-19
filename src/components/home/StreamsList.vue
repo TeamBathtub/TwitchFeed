@@ -1,11 +1,9 @@
 <template>
   <section>
     <ul>
-      <li>
-        <StreamerItem v-for="(stream, index) in streams"
-        :key="index"
-        :stream="stream"/>
-      </li>
+      <StreamerItem v-for="(stream, index) in streams"
+      :key="index"
+      :stream="stream"/>
     </ul>
   </section>
 </template>
@@ -27,9 +25,9 @@ export default {
   ul {
     list-style-type: none;
     display: grid;
-  }
-  li {
-    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    margin: 4vw;
   }
   h3 {
     text-align: center;
