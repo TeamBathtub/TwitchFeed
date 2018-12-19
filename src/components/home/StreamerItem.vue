@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="hvr-float">
+    <div class="item">
       <h3> #{{ index + 1 }} {{ stream.user_name }}</h3>
       <button class="detail-button" @click="show = true">View Details</button>
     </div>
@@ -43,7 +43,7 @@ button {
   margin: 0 auto;
   padding: 5px;
 }
-.hvr-float {
+/* .hvr-float {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -59,5 +59,5 @@ button {
 .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
-}
+} */
 </style>
