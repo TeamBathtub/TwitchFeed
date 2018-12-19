@@ -4,12 +4,14 @@
     <table align="center" v-if="stats">
      <thead>
        <tr>
-         <th> Average </th>
+         <th>Streamer</th>
+         <th>Average</th>
        </tr>
      </thead>
      <tbody>
        <tr v-for="stat in stats"
          :key="stat.user_name">
+         <td> {{stat.user_name}} </td>
          <td> {{stat.average}} </td>
        </tr>
      </tbody>
