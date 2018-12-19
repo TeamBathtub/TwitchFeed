@@ -3,9 +3,9 @@
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
     <button class="close" @click="onClose">X</button>
-            <h2>Display Name : {{stream.user_name}}</h2>
-            <h3>Number of View Counts: {{stream.viewer_count}}</h3>
-            <button @click="handleAdd"> Add to Favorites </button>
+      <h2>Display Name : {{stream.user_name}}</h2>
+      <h3>Number of View Counts: {{stream.viewer_count}}</h3>
+      <button @click="handleAdd"> Add to Favorites </button>
     </div>
   </div>
  </transition>

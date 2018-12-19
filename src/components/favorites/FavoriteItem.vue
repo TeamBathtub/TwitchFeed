@@ -1,20 +1,16 @@
 <template>
-  <button @click="handleDelete"> Delete </button>
+  <section>
+    <li>
+      {{favorite.user_name}}
+    </li>
+    <button @click="handleDelete"> Delete </button>
+  </section>
 </template>
 
 <script>
-import api from '../../services/api';
 export default {
-  data() {
-    return {
-      streamer: null
-    };
-  },
-  created() {
-    api.getStreamer(this.$route.params.id)
-      .then(streamer => {
-        this.streamer = streamer; 
-      });
+  props: {
+    favorite: Object
   }
 };
 </script>
