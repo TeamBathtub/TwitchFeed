@@ -6,6 +6,12 @@
     v-if="randomName"
     :randomName="randomName"
     :randomThumbnail="randomThumbnail"
+    :url="url"
+    />
+    <RatingsForm
+    v-if="randomName"
+    :getRandomStreamer="getRandomStreamer"
+    :randomName="randomName"
     />
   </section>
 </template>
@@ -13,13 +19,16 @@
 <script>
 import api from '../../services/api';
 import RatingsDisplay from './RatingsDisplay';
+import RatingsForm from './RatingsForm';
+
 export default {
   data() {
     return {
       streams: null,
       labels: null,
       randomName: null,
-      randomThumbnail: null
+      randomThumbnail: null,
+      url: null
     };
   },
   created() {
@@ -39,6 +48,7 @@ export default {
       let index = Math.floor((Math.random() * this.streams.length) + 1);
       this.randomName = this.labels[index];
       this.getStreamerThumbnail();
+      this.makeUrl();
     },
     getStreamerThumbnail() {
       api.getStreamers(this.randomName)
@@ -49,10 +59,13 @@ export default {
           this.error = err.message;
         });
     },
-  
+    makeUrl() {
+      return this.url = 'https://www.twitch.tv/' + this.randomName;
+    }
   },
   components: {
-    RatingsDisplay
+    RatingsDisplay,
+    RatingsForm
   }
 };
 </script>
