@@ -79,14 +79,14 @@ export default {
     })
       .then(response => response.json());
   },
-  addStreamer(stream) {
+  addStreamer(favorite) {
     return fetch('/api/favorites', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
         'Authorization': token
       },
-      body: JSON.stringify(stream)
+      body: JSON.stringify(favorite)
     })
       .then(response => response.json());
   },

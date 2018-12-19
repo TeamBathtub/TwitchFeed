@@ -1,9 +1,9 @@
 <template>
   <section>
     <li>
-      {{favorite.user_name}}
+      {{favorite.userName}}
     </li>
-    <button @click="handleDelete"> Delete </button>
+    <!-- <button @click="handleDelete"> Delete </button> -->
   </section>
 </template>
 

@@ -1,32 +1,26 @@
 <template>
   <section>
     <ul>
-      <li v-bind:key="index"
-        v-for="(result, index) in results">
-        <h3>#{{index + 1}} {{result.user_name}}</h3>
-        <p>Number of Viewers: {{result.viewer_count}}</p>
-        <button @click="handleAdd">Add to Favorites</button>
-      </li>
+      <StreamerTile v-for="(result, index) in results"
+        v-bind:key="index"
+        v-bind:index="index"
+        v-bind:result="result"
+        v-bind:onAdd="onAdd"/>
     </ul>
   </section>
 </template>
 
 <script>
-// import api from '../../services/api';
+import StreamerTile from './StreamerTile';
 export default {
   props: {
-    results: Array,
+    onAdd: Function,
+    results: Array
   },
-  // methods: {
-  //   handleAdd(result) {
-  //     console.log('submitted'); 
-  //     console.log(this.result); 
-  //     return api.addStreamer(result)
-  //       .then(saved => {
-  //         this.results.push(saved); 
-  //       });
-  //   }
-  // }
+  
+  components: {
+    StreamerTile
+  }
 };
 </script>
 
