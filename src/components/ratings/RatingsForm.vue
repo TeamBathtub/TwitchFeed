@@ -15,17 +15,18 @@
 export default {
   data() {
     return {
-      voteValue: null
+      voteValue: null,
     };
   },
   methods: {
     handleSubmit() {
-      console.log(this.voteValue);
+      console.log(this.voteValue, this.randomName);
       this.getRandomStreamer();
     }
   },
   props: {
     getRandomStreamer: Function,
+    randomName: String
   }
 };
 </script>

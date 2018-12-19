@@ -11,6 +11,7 @@
     <RatingsForm
     v-if="randomName"
     :getRandomStreamer="getRandomStreamer"
+    :randomName="randomName"
     />
   </section>
 </template>
