@@ -91,7 +91,11 @@ export default {
   }, 
   getStreamer() {
     return fetch('/api/favorites', {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token
+      }
     })
       .then(response => response.json()); 
   }

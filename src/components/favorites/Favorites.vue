@@ -1,14 +1,14 @@
 <template>
-<section>
-  <h1>Favorite Streamers</h1>
-  <div>
-    <li>
-    <FavoriteItem v-for="streamer in streamers"
-    :key="streamer"
-    :streamer="streamer"/>
-    </li>
-  </div>
-</section>
+  <section>
+    <h1>Favorite Streamers</h1>
+      <ul>
+        <li v-for="favorite in favorites"
+            :key="favorite"
+            :favorite="favorite">
+          <FavoriteItem v-bind:favorite="favorite" />
+        </li>
+      </ul>
+  </section>
 </template>
 
 <script>
@@ -20,12 +20,12 @@ export default {
     FavoriteItem
   },
   props: {
-    streamer: Object
+    favorites: Array
   }, 
   created() {
     api.getStreamer()
-      .then(streamer => {
-        this.streamer = streamer; 
+      .then(response => {
+        return this.favorites = response; 
       });
   }
 };

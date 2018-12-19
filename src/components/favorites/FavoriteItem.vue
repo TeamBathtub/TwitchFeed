@@ -1,13 +1,14 @@
 <template>
-  <button @click="handleDelete"> Delete </button>
+  <section>
+    {{favorite.streamer}}
+    <button @click="handleDelete"> Delete </button>
+  </section>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      streamer: null
-    };
+  props: {
+    favorite: Object
   }
 };
 </script>

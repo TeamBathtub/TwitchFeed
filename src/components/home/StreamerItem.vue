@@ -1,6 +1,6 @@
 <template>
   <section>
-  <div>
+    <div>
       <h3> {{ stream.user_name }}</h3>
       <button class="detail-button" @click="show = true">View Details</button>
       <Modal :stream="stream" v-if="show" :onClose="() => show = false">
