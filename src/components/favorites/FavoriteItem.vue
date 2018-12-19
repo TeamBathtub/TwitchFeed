@@ -1,6 +1,8 @@
 <template>
   <section>
-    {{favorite.streamer}}
+    <li>
+      {{favorite.user_name}}
+    </li>
     <button @click="handleDelete"> Delete </button>
   </section>
 </template>

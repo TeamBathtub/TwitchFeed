@@ -1,11 +1,11 @@
 <template>
   <section>
-    <div>
+    <div class="item">
       <h3> {{ stream.user_name }}</h3>
       <button class="detail-button" @click="show = true">View Details</button>
-      <Modal :stream="stream" v-if="show" :onClose="() => show = false">
-      </Modal>
     </div>
+    <Modal :stream="stream" v-if="show" :onClose="() => show = false">
+    </Modal>
   </section>
 </template>
 
@@ -27,16 +27,18 @@ export default {
 };
 </script>
 
-<style>
-h3 {
+<style scoped>
+.item {
   box-shadow: 1pt 1pt 1pt black;
   text-align: center;
+  padding-bottom: 10px;
 }
-h3:hover {
+.item:hover {
   background-color: purple;
 }
 button {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
 }
 </style>

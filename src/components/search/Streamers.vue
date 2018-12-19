@@ -72,6 +72,7 @@ export default {
 <style scoped>
 h2 {
   text-align: center;
+  margin-bottom: 25px;
 }
 section {
   padding: 20px;

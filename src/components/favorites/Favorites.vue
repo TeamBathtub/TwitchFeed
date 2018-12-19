@@ -2,11 +2,9 @@
   <section>
     <h1>Favorite Streamers</h1>
       <ul>
-        <li v-for="favorite in favorites"
-            :key="favorite"
-            :favorite="favorite">
-          <FavoriteItem v-bind:favorite="favorite" />
-        </li>
+        <FavoriteItem v-for="favorite in favorites"
+          :key="favorite.id"
+          :favorite="favorite" />
       </ul>
   </section>
 </template>
@@ -16,12 +14,14 @@ import FavoriteItem from './FavoriteItem';
 import api from '../../services/api';
 
 export default {
+  data() {
+    return {
+      favorites: null
+    };
+  },
   components: {
     FavoriteItem
   },
-  props: {
-    favorites: Array
-  }, 
   created() {
     api.getStreamer()
       .then(response => {
