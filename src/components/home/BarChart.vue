@@ -15,7 +15,7 @@ export default {
       datasets: [
         {
           label: 'Viewers',
-          backgroundColor: '#f87979',
+          backgroundColor: '#B19ED6',
           data: this.viewerCounts
         },
       ]
