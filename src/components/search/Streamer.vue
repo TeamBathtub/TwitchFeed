@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 li {
   list-style-type: none;
   text-align: center;
