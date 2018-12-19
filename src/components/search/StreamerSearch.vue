@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form class="search-form" @submit.prevent="handleSubmit">
     <input v-model="keyword">
     <button>Go</button>
   </form>
@@ -35,6 +35,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.search-form {
+  text-align: center;
+  margin-bottom: 40px;
+}
+input {
+  margin-right: 5px;
+}
 
 </style>
