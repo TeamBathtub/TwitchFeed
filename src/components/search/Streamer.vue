@@ -6,7 +6,7 @@
         <p><span>View Count:</span><br/><br/>
           {{streamer.view_count}}
         </p>
-        <button @click="onAdd">{{ favorite ? 'Remove from Favorites' : 'Add to Favorites' }}</button>
+        <button @click="handleSubmit">Add to Favorites</button>
       </div>
       <img v-bind:src="streamer.profile_image_url">
     </div>
@@ -26,9 +26,9 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log('streamer', this.streamer);
-      this.onAdd(this.streamer);
-      this.favorite = true;
+      const streamer = this.streamer;
+      streamer.user_name = streamer.login;
+      this.onAdd(streamer);
     }
   }
 

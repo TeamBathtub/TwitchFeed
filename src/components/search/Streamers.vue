@@ -39,7 +39,6 @@ export default {
   },
   created() {
     this.searchStreamers();
-    console.log(this.results, 'HI');
     api.getTop100()
       .then(response => 
         this.results = response.data);
@@ -59,17 +58,14 @@ export default {
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
-          this.streamers[0] = response.data;
+          this.streamer = response.data[0];
         })
         .catch(err => {
           this.error = err.message;
         });
     },
     handleAdd(favorite) {
-      return api.addStreamer(favorite)
-        .then(saved => {
-          this.favorites.push(saved); 
-        });
+      return api.addStreamer(favorite);
     }
   }
 };
