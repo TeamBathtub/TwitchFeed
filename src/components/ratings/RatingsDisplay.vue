@@ -52,7 +52,7 @@ a:hover {
   padding: 8px;
   margin: 1vh;
   text-align: center;
-  border-color: yellow;
+  border-color: #B19ED6;
 }
 img {
     width: 100%;
