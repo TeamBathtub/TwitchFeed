@@ -22,6 +22,7 @@ export default {
     handleSubmit() {
       let currentRating = { userName: this.randomName, score: this.voteValue };
       this.onAdd(currentRating);
+      this.voteValue = null;
     }
   },
   props: {
