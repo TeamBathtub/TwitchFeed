@@ -18,15 +18,15 @@ export default {
 
 <style scoped>
 #randomStreamer {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    background-color: slateblue;
-    padding: 2vw;
-    color: white;
-    border: gray outset 7px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  background-color: slateblue;
+  padding: 2vw;
+  color: white;
+  border: gray outset 7px;
 }
 h2 {
   font-size: 20px;
