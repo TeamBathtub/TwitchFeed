@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="item">
-      <h3> {{ stream.user_name }}</h3>
+      <h3> #{{ index + 1 }} {{ stream.user_name }}</h3>
       <button class="detail-button" @click="show = true">View Details</button>
     </div>
     <Modal :stream="stream" v-if="show" :onClose="() => show = false">
@@ -14,7 +14,8 @@ import Modal from '../shared/Modal';
 
 export default {
   props: {
-    stream: Object
+    stream: Object,
+    index: Number
   },
   components: {
     Modal

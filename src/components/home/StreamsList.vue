@@ -3,7 +3,8 @@
     <ul>
       <StreamerItem v-for="(stream, index) in streams"
       :key="index"
-      :stream="stream"/>
+      :stream="stream"
+      :index="index"/>
     </ul>
   </section>
 </template>
