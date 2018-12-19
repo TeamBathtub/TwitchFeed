@@ -13,6 +13,7 @@
 
 <script>
 import FavoriteItem from './FavoriteItem';
+import api from '../../services/api';
 
 export default {
   components: {
@@ -20,6 +21,12 @@ export default {
   },
   props: {
     streamer: Object
+  }, 
+  created() {
+    api.getStreamer()
+      .then(streamer => {
+        this.streamer = streamer; 
+      });
   }
 };
 </script>
