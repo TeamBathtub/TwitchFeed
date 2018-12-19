@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="ratings">
     <h1>Ratings</h1>
     <RatingsDisplay
     v-if="randomName"
@@ -85,6 +85,11 @@ button {
   color: black;
   border: 2px solid gray;
   padding: 14px 40px;
+}
+#ratings {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 </style>
