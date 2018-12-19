@@ -80,7 +80,14 @@ export default {
       .then(response => response.json());
   },
   addStreamer(stream) {
-    return fetch('/api/favorites', getOptions('POST', stream))
+    return fetch('/api/favorites', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token
+      },
+      body: JSON.stringify(stream)
+    })
       .then(response => response.json());
   },
   deleteStreamer(id) {
