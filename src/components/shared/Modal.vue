@@ -3,16 +3,30 @@
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
     <button class="close" @click="onClose">X</button>
+            <h2>Display Name : {{stream.user_name}}</h2>
+            <h3>Number of View Counts: {{stream.viewer_count}}</h3>
+            <button @click="handleAdd"> Add to Favorites </button>
     </div>
   </div>
-  </transition>
+ </transition>
 </template>
 
 <script>
+import api from '../../services/api';
+
 export default {
   props: {
-    onClose: Function
+    onClose: Function, 
+    onAdd: Function,
+    stream: Object
   },
+  data() {
+    return {
+      show: false,
+      name: null,
+      thumbnails: null
+    };
+  }, 
   created() {
     console.log('Modal created');
     this.documentListener = event => {
@@ -22,9 +36,20 @@ export default {
       }
     };
     document.addEventListener('keyup', this.documentListener);
+  
   },
   destroyed() {
     document.removeEventListener('keyup', this.documentListener);
+  },
+  methods: {
+    handleAdd(stream) {
+      console.log('submitted'); 
+      console.log(this.stream); 
+      return api.addStreamer(stream)
+        .then(saved => {
+          this.streams.push(saved); 
+        });
+    }
   }
 };
 </script>
@@ -40,7 +65,7 @@ export default {
   z-index: 99;
   justify-content: center;
   align-items: center;
-  background-color:rgba(245, 176, 176, 0.5);
+  background-color:rgba(187, 15, 173, .9);
 }
 .content {
   position: relative;
@@ -58,13 +83,13 @@ export default {
 .modal-image {
   width: 200px;
   height: 200px;
-}
+} 
 .fade-enter-active, .fade-leave-active {
   transition: all 1s;
-  background-color:rgba(245, 176, 176, 0.5);
+  background-color:rgba(187, 15, 173, 0.8);
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
-  background-color:rgba(245, 176, 176, 0.5);
+  background-color:rgba(187, 15, 173, 0.8);
 }
 </style>
