@@ -9,8 +9,8 @@
     />
     <RatingsForm
     v-if="randomName"
-    :getRandomStreamer="getRandomStreamer"
     :randomName="randomName"
+    :onAdd="handleAdd"
     />
   </section>
 </template>
@@ -60,6 +60,11 @@ export default {
     },
     makeUrl() {
       return this.url = 'https://www.twitch.tv/' + this.randomName;
+    },
+    handleAdd(rating) {
+      console.log('rating', rating);
+      api.addRating(rating)
+        .then(() => this.getRandomStreamer());
     }
   },
   components: {

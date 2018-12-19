@@ -20,14 +20,13 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(this.voteValue, this.randomName);
-      this.voteValue = null;
-      this.getRandomStreamer();
+      let currentRating = { userName: this.randomName, score: this.voteValue };
+      this.onAdd(currentRating);
     }
   },
   props: {
-    getRandomStreamer: Function,
-    randomName: String
+    randomName: String,
+    onAdd: Function
   }
 };
 </script>

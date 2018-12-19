@@ -105,7 +105,19 @@ export default {
       }
     })
       .then(response => response.json()); 
-  }
+  },
+  addRating(rating) {
+    return fetch('/api/ratings', getOptions ('POST', rating))
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+        return response.json()
+          .then(error => {
+            return Promise.reject(error);
+          });
+      });
+  }, 
 };
 
 
