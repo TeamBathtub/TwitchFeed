@@ -84,7 +84,7 @@ export default {
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: purple;
+  background-color: rgb(75, 56, 122);
   padding: 2vh;
 }
 nav a {
@@ -94,11 +94,21 @@ nav a {
   font-size: 3vh;
 }
 nav a:hover {
-  color: yellow;
+  color: rgb(177, 158, 214);
   text-decoration: underline;
+  font-weight: bolder;
 }
 body {
   margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+#user {
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+  background-color: rgb(25, 23, 28);
+  color: white;
+  font-weight: bold;
 }
 
 </style>
