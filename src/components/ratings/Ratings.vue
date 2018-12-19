@@ -8,7 +8,10 @@
     :randomThumbnail="randomThumbnail"
     :url="url"
     />
-    <RatingsForm/>
+    <RatingsForm
+    v-if="randomName"
+    :getRandomStreamer="getRandomStreamer"
+    />
   </section>
 </template>
 
@@ -58,7 +61,6 @@ export default {
     makeUrl() {
       return this.url = 'https://www.twitch.tv/' + this.randomName;
     }
-  
   },
   components: {
     RatingsDisplay,
