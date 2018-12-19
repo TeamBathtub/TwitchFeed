@@ -5,17 +5,28 @@
         v-for="(result, index) in results">
         <h3>#{{index + 1}} {{result.user_name}}</h3>
         <p>Number of Viewers: {{result.viewer_count}}</p>
-        <button>Add to Favorites</button>
+        <button @click="handleAdd">Add to Favorites</button>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
+// import api from '../../services/api';
 export default {
   props: {
-    results: Array
-  }
+    results: Array,
+  },
+  // methods: {
+  //   handleAdd(result) {
+  //     console.log('submitted'); 
+  //     console.log(this.result); 
+  //     return api.addStreamer(result)
+  //       .then(saved => {
+  //         this.results.push(saved); 
+  //       });
+  //   }
+  // }
 };
 </script>
 

@@ -79,12 +79,12 @@ export default {
     })
       .then(response => response.json());
   },
-  addStreamer(streamer) {
-    return fetch('/api/favorite', getOptions('POST', streamer))
+  addStreamer(stream) {
+    return fetch('/api/favorites', getOptions('POST', stream))
       .then(response => response.json());
   },
   deleteStreamer(id) {
-    return fetch(`/api/favorite/${id}`, {
+    return fetch(`/api/favorites/${id}`, {
       method: 'DELETE'
     })
       .then(response => response.json());
