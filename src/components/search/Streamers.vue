@@ -5,15 +5,15 @@
     <StreamerSearch v-bind:onSearch="handleSearch" v-bind:search="search"/>
     
     <div class="search-container">
-      <ul v-if="streamers">
-        <Streamer v-for="(streamer, index) in streamers"
-          v-bind:key="index"
-          v-bind:streamer="streamer"/>
+      <ul v-if="streamer">
+        <Streamer 
+          v-bind:streamer="streamer"
+          v-bind:onAdd="handleAdd"/>
       </ul>
     </div>
 
     <h2>View Top 100 Streamers</h2>
-    <Top100 class="grid" v-bind:results="results"></Top100>
+    <Top100 class="grid" v-bind:onAdd="handleAdd" v-bind:results="results"></Top100>
 
   </section>
 </template>
@@ -27,9 +27,8 @@ export default {
   data() {
     const search = this.$route.query.search;
     return {
+      streamer: null,
       results: null,
-      streamers: null,
-      filteredStreamers: [],
       search: search ? decodeURIComponent(this.$route.query.search) : ''
     };
   },
@@ -59,11 +58,14 @@ export default {
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
-          this.streamers = response.data;
+          this.streamer = response.data[0];
         })
         .catch(err => {
           this.error = err.message;
         });
+    },
+    handleAdd(favorite) {
+      return api.addStreamer(favorite);
     }
   }
 };

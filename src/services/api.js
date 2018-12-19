@@ -59,6 +59,7 @@ export default {
   },
 
   getStreamers(searchTerm = '') {
+    console.log('search term', searchTerm);
     return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
@@ -79,14 +80,14 @@ export default {
     })
       .then(response => response.json());
   },
-  addStreamer(stream) {
+  addStreamer(favorite) {
     return fetch('/api/favorites', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
         'Authorization': token
       },
-      body: JSON.stringify(stream)
+      body: JSON.stringify(favorite)
     })
       .then(response => response.json());
   },

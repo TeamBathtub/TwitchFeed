@@ -15,7 +15,6 @@
     </span>
   </header>
   <main>
-    <!--Need to add in user v-if in RouterLink and Auth-->
     <RouterView v-if="user" :user="user"></RouterView>
      <Auth v-else
         :onSignUp="handleSignUp"

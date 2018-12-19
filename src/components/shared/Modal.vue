@@ -5,7 +5,7 @@
     <button class="close" @click="onClose">X</button>
       <h2>Display Name : {{stream.user_name}}</h2>
       <h3>Number of View Counts: {{stream.viewer_count}}</h3>
-      <button @click="handleAdd"> Add to Favorites </button>
+      <!-- <button @click="handleAdd"> Add to Favorites </button> -->
     </div>
   </div>
  </transition>
@@ -17,7 +17,7 @@ import api from '../../services/api';
 export default {
   props: {
     onClose: Function, 
-    onAdd: Function,
+    // onAdd: Function,
     stream: Object
   },
   data() {
@@ -40,16 +40,6 @@ export default {
   },
   destroyed() {
     document.removeEventListener('keyup', this.documentListener);
-  },
-  methods: {
-    handleAdd(stream) {
-      console.log('submitted'); 
-      console.log(this.stream); 
-      return api.addStreamer(stream)
-        .then(saved => {
-          this.streams.push(saved); 
-        });
-    }
   }
 };
 </script>
