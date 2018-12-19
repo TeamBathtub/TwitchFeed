@@ -21,6 +21,7 @@ export default {
   methods: {
     handleSubmit() {
       console.log(this.voteValue, this.randomName);
+      this.voteValue = null;
       this.getRandomStreamer();
     }
   },
