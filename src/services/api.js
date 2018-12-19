@@ -113,10 +113,10 @@ export default {
           });
       });
   },
-  getRatings() {
-    return fetch('/api/ratings', getOptions('GET'))
+  getStats() {
+    return fetch('/api/ratings/stats', getOptions('GET'))
       .then(response => response.json());
-  } 
+  }
 };
 
 

@@ -1,7 +1,19 @@
 <template>
   <section> 
     <h1>Community</h1>
-    {{ ratings }}
+    <table align="center" v-if="stats">
+     <thead>
+       <tr>
+         <th> Average </th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr v-for="stat in stats"
+         :key="stat.user_name">
+         <td> {{stat.average}} </td>
+       </tr>
+     </tbody>
+   </table>
   </section>
 </template>
 
@@ -11,12 +23,13 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      ratings: null
+      stats: null
     };
   },
   created() {
-    this.getRatings();
-    console.log(this.ratings);
+    api.getStats()
+      .then(stats => this.stats = stats);
+    console.log(this.stats);
   },
   methods: {
     getRatings() {
