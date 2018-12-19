@@ -1,12 +1,10 @@
 <template>
   <section>
     <ul>
-      <li>
         <StreamerItem v-for="(stream, index) in streams"
         :key="index"
         :stream="stream"
         :index="index"/>
-      </li>
     </ul>
   </section>
 </template>
