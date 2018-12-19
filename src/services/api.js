@@ -15,7 +15,6 @@ const getOptions = (method, data) => {
   }
   return options;
 };
-
 export default {
   setToken(t) {
     token = t;
@@ -31,7 +30,6 @@ export default {
     })
       .then(response => response.json());
   },
-
   signUp(profile) {
     return fetch('/api/auth/signup', getOptions ('POST', profile))
       .then(response => {
@@ -44,7 +42,6 @@ export default {
           });
       });
   }, 
-
   signIn(credentials) {
     return fetch('/api/auth/signin', getOptions ('POST', credentials))
       .then(response => {
@@ -57,7 +54,6 @@ export default {
           });
       });
   },
-
   getStreamers(searchTerm = '') {
     return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
@@ -68,7 +64,6 @@ export default {
     })
       .then(response => response.json());
   },
-
   getTop100() {
     return fetch('https://api.twitch.tv/helix/streams?first=100', {
       method: 'GET',
@@ -117,7 +112,11 @@ export default {
             return Promise.reject(error);
           });
       });
-  }, 
+  },
+  getRatings() {
+    return fetch('/api/ratings', getOptions('GET'))
+      .then(response => response.json());
+  } 
 };
 
 
