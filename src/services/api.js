@@ -89,8 +89,10 @@ export default {
     })
       .then(response => response.json());
   }, 
-  getStreamer(id) {
-    return fetch(`/api/profile/${id}`)
+  getStreamer() {
+    return fetch('/api/favorites', {
+      method: 'GET'
+    })
       .then(response => response.json()); 
   }
 };
