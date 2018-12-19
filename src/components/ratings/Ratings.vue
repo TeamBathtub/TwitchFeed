@@ -20,7 +20,6 @@
 import api from '../../services/api';
 import RatingsDisplay from './RatingsDisplay';
 import RatingsForm from './RatingsForm';
-//test 2fdadsfs
 export default {
   data() {
     return {
