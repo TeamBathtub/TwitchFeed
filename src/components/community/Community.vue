@@ -79,6 +79,9 @@ thead {
   color: white;
   font-size: 3.5vh;
 }
+th {
+  border: solid gray 2px;
+}
 table {
   width: 60vw;
   align-items: center;
