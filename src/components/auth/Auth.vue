@@ -1,6 +1,9 @@
 <template>
   <section class="wrapper">
-    <div class="video-wrap">
+    <div id="video-wrap">
+      <video autoplay muted loop id="myVideo">
+        <source src="../../../assets/twitchClip.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="overlay" v-if="method === 'signin'">
       <h1> Welcome to Twitch Feed </h1>
@@ -13,11 +16,11 @@
           Password:
           <input type="password" v-model="profile.password" required> 
         </label>
-          <button> Sign In </button>
-    </form>
+        <button> Sign In </button>
+      </form>
          <p>
-        Need to Register?
-        <button @click="method = 'signup'"> Sign Up </button>
+          Need to Register?
+          <button @click="method = 'signup'"> Sign Up </button>
         </p>
     </div>
       <div class="overlay" v-else>
@@ -84,40 +87,13 @@ export default {
   }
 };
 </script>
+
 <style>
-/* body {
-  font-size: 40pt;
-  color:rgb(255, 255, 255);
+#video-wrap {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
 }
-label {
-  font-size: 20pt;
-}
-h1 {
-  margin-top: 100pt;
-}
-section {
-  text-align: center;
-}
-.wrapper {
-  height: 100%;
-  position: fixed;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.video-wrap {
-  position: fixed;
-  width: 100%; 
-  height: 100%;
-  opacity: .3;
-  z-index: 1;
-}
-.overlay {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(103, 17, 129, 0.221);
-  opacity: .6;
-} */
 </style>
