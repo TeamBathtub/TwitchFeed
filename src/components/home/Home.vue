@@ -1,16 +1,17 @@
 <template>
   <section>
-    <div>
+    <div id="chart">
+      <h3>Most Viewers Currently</h3>
         <BarChart
         v-if="labels && viewerCounts" 
         :labels="labels"
         :viewerCounts="viewerCounts"
         />
     </div>
-    <div>
+    <div id="list">
       <StreamsList :streams="streams" />
     </div>
-   </section>
+  </section>
 </template>
 
 <script>
@@ -53,6 +54,19 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+h3 {
+  text-align: center;
+  font-size: 6vh;
+  margin: 2vh 35vw 2vh 35vw;
+  border: solid gray 2px;
+  border-radius: 20vw;
+  color: gray;
+  width: 25vw;
+  justify-content: center;
+}
+#list {
+  background-color: rgba(227, 227, 227, 0.5);
+  padding: 1vh;
+}
 </style>

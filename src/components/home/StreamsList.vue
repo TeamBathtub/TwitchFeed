@@ -26,7 +26,7 @@ export default {
   ul {
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 3vw;;
     margin: 4vw;
   }
@@ -36,5 +36,11 @@ export default {
   button {
     position: relative;
     left: 45%;
+  }
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
   }
 </style>
