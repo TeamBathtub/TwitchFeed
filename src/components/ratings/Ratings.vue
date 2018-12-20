@@ -6,10 +6,6 @@
     :randomName="randomName"
     :randomThumbnail="randomThumbnail"
     :url="url"
-    />
-    <RatingsForm
-    v-if="randomName"
-    :randomName="randomName"
     :onAdd="handleAdd"
     />
   </section>
@@ -18,7 +14,7 @@
 <script>
 import api from '../../services/api';
 import RatingsDisplay from './RatingsDisplay';
-import RatingsForm from './RatingsForm';
+
 export default {
   data() {
     return {
@@ -62,14 +58,12 @@ export default {
       return this.url = 'https://www.twitch.tv/' + this.randomName;
     },
     handleAdd(rating) {
-      console.log('rating', rating);
       api.addRating(rating)
         .then(() => this.getRandomStreamer());
     }
   },
   components: {
-    RatingsDisplay,
-    RatingsForm
+    RatingsDisplay
   }
 };
 </script>
@@ -95,8 +89,8 @@ button {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin-bottom: 10vh;
 }
-
 </style>
 
 

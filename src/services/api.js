@@ -148,7 +148,7 @@ export default {
   getAllFavorites() {
     return fetch('/api/community', getOptions('Get'))
       .then(response => response.json()); 
-  },
+  }
 };
 
 
