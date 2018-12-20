@@ -1,7 +1,7 @@
 <template>
   <li>
-    <div class="info">
-      <h2>{{streamer.display_name}}</h2>
+    <div class="container">
+      <h2 class="info">{{streamer.display_name}}</h2>
       <img v-bind:src="streamer.profile_banner">
       <div class="info">
         <p><span>Game:</span></p>
@@ -17,7 +17,7 @@
         <p><span>Views:</span><br/><br/>
           {{streamer.views}}
         </p>
-        <p><span><a v-bind:href="`${streamer.url}`">
+        <p><span><a v-bind:href="`${streamer.url}`" target="_blank">
           Stream Url</a></span>
         </p>
         <button @click="handleSubmit">Add to Favorites</button>
@@ -50,19 +50,24 @@ export default {
 <style scoped>
 li {
   position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   border: 2px solid navy;
   box-shadow: 4px 4px 4px black;
   background: black;
+  list-style-type: none;
 }
 span {
   font-weight: bold;
 }
 img {
   max-height: 300px;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0.5;
   object-fit: cover;
 }
 .info {
