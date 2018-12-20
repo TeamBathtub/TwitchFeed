@@ -1,6 +1,6 @@
 <template>
   <section class="streamers">
-    <h2>Search by Streamer Name</h2>
+    <h1>Search by Streamer Name</h1>
 
     <StreamerSearch v-bind:onSearch="handleSearch" v-bind:search="search"/>
     
@@ -72,9 +72,16 @@ export default {
 </script>
 
 <style scoped>
-h2 {
+h1 {
   text-align: center;
-  margin-bottom: 25px;
+  font-size: 5vh;
+  margin: 2vh 35vw 2vh 35vw;
+  border: solid gray 2px;
+  border-radius: 20vw;
+  color: gray;
+  width: 25vw;
+  justify-content: center;
+  padding: 1vw;
 }
 section {
   padding: 20px;

@@ -1,7 +1,7 @@
 <template>
   <form class="search-form" @submit.prevent="handleSubmit">
-    <input v-model="keyword">
-    <button>Go</button>
+    <input v-model="keyword" placeholder="Ninja">
+    <button>Search</button>
   </form>
 </template>
 
@@ -42,6 +42,11 @@ export default {
 }
 input {
   margin-right: 5px;
+  font-size: 20px;
+  padding: 1vw;
+  border: black solid 1px; 
 }
-
+button {
+  
+}
 </style>

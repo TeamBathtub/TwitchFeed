@@ -1,27 +1,16 @@
 <template>
   <section> 
     <h1>Community</h1>
-    <table align="center" v-if="stats">
-     <thead>
-       <tr>
-         <th>Streamer</th>
-         <th>Average</th>
-       </tr>
-     </thead>
-     <tbody>
-       <tr v-for="stat in stats"
-         :key="stat.user_name">
-         <td> {{stat.user_name}} </td>
-         <td> {{stat.average}} </td>
-       </tr>
-     </tbody>
-   </table>
+    <CommunityRating 
+      v-for="stat in stats"
+      :stat="stat"
+      :key="stat.user_name" />
   </section>
 </template>
 
 <script>
 import api from '../../services/api';
-
+import CommunityRating from './CommunityRating'; 
 export default {
   data() {
     return {
@@ -31,7 +20,7 @@ export default {
   created() {
     api.getStats()
       .then(stats => this.stats = stats);
-    console.log(this.stats);
+    console.log(typeof(this.stat));
   },
   methods: {
     getRatings() {
@@ -40,6 +29,9 @@ export default {
           this.ratings = ratings;
         });
     }
+  }, 
+  components: {
+    CommunityRating
   }
 };
 </script>
