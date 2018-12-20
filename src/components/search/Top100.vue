@@ -17,7 +17,6 @@ export default {
     onAdd: Function,
     results: Array
   },
-  
   components: {
     StreamerTile
   }
