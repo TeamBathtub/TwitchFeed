@@ -28,7 +28,7 @@ export default {
 ul {
   display: grid;
   list-style-type: none;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   padding: 0;
   grid-column-gap: 10px;
   grid-row-gap: 10px;

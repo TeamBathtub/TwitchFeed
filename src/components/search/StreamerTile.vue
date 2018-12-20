@@ -28,7 +28,6 @@ section {
   border: gray outset 3px;
   padding: 1vw;
 }
-
 button:hover {
   border-color: aqua;
 }
