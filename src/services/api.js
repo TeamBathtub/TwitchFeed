@@ -54,9 +54,20 @@ export default {
           });
       });
   },
+  // getStreamers(searchTerm = '') {
+  //   console.log('search term', searchTerm);
+  //   return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y'
+  //     }
+  //   })
+  //     .then(response => response.json());
+  // },
   getStreamers(searchTerm = '') {
     console.log('search term', searchTerm);
-    return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
+    return fetch(`https://api.twitch.tv/kraken/search/channels?query=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -65,6 +76,7 @@ export default {
     })
       .then(response => response.json());
   },
+  
   getTop100() {
     return fetch('https://api.twitch.tv/helix/streams?first=100', {
       method: 'GET',

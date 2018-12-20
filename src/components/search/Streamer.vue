@@ -1,14 +1,17 @@
 <template>
   <li>
-    <h2>{{streamer.login}}</h2>
+    <h2>{{streamer.display_name}}</h2>
     <div class="container">
       <div class="info">
-        <p><span>View Count:</span><br/><br/>
-          {{streamer.view_count}}
+        <p><span>Game:</span><br/><br/>
+          {{streamer.game}}
+        </p>
+        <p><span>Followers:</span><br/><br/>
+          {{streamer.followers}}
         </p>
         <button @click="handleSubmit">Add to Favorites</button>
       </div>
-      <img v-bind:src="streamer.profile_image_url">
+      <img v-bind:src="streamer.profile_banner">
     </div>
   </li>
 </template>

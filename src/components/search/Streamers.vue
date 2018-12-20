@@ -58,7 +58,7 @@ export default {
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
-          this.streamer = response.data[0];
+          this.streamer = response.channels[0];
         })
         .catch(err => {
           this.error = err.message;
