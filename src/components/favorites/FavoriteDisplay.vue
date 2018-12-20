@@ -1,8 +1,8 @@
 <template>
   <section>
-      {{favorite.userName}}
-      <a :href="url" target="_blank">View Stream</a>
-      <img :src="thumbnail"/>
+    <h2>{{favorite.userName}}</h2>
+    <img :src="thumbnail"/>
+    <a :href="url" target="_blank">View Stream</a>
     <!-- <button @click="handleDelete"> Delete </button> -->
   </section>
 </template>
@@ -19,4 +19,36 @@ export default {
 
 <style scoped>
 
+h2 {
+  font-size: 20px;
+  background-color: gray;
+  padding: 10px;
+  border: gray outset 4px;
+}
+a {
+  color: white;
+  background-color: rgba(178, 178, 178, 0.6);
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 8px;
+  text-align: center;
+  border: gray 2px solid;
+}
+a:hover {
+  color: white;
+  background-color: rgb(178, 178, 178);
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 8px;
+  margin: 1vh;
+  text-align: center;
+  border-color: #B19ED6;
+}
+img {
+    width: 100%;
+    height: 100%;
+    border: black solid 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 </style>
