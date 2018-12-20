@@ -12,12 +12,9 @@
 </template>
 
 <script>
-import api from '../../services/api';
-
 export default {
   props: {
     onClose: Function, 
-    // onAdd: Function,
     stream: Object
   },
   data() {

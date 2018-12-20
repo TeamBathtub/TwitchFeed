@@ -1,7 +1,7 @@
 <template>
   <section>
       {{favorite.userName}}
-      <a :href="url">View Stream</a>
+      <a :href="url" target="_blank">View Stream</a>
       <img :src="thumbnail"/>
     <!-- <button @click="handleDelete"> Delete </button> -->
   </section>
