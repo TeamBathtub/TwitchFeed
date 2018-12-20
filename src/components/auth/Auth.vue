@@ -86,6 +86,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 .wrapper {
   font-size: 40pt;

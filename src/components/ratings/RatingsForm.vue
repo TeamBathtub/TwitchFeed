@@ -1,11 +1,11 @@
 <template>
     <div>
         <form @submit.prevent="handleSubmit">
-            <input type="radio" value="1" name="vote" v-model="voteValue">
-            <input type="radio" value="2" name="vote" v-model="voteValue">
-            <input type="radio" value="3" name="vote" v-model="voteValue">
-            <input type="radio" value="4" name="vote" v-model="voteValue">
-            <input type="radio" value="5" name="vote" v-model="voteValue">
+            1<input type="radio" value="1" name="vote" v-model="voteValue">
+            2<input type="radio" value="2" name="vote" v-model="voteValue">
+            3<input type="radio" value="3" name="vote" v-model="voteValue">
+            4<input type="radio" value="4" name="vote" v-model="voteValue">
+            5<input type="radio" value="5" name="vote" v-model="voteValue">
             <button>Vote</button>
         </form>
     </div>
@@ -31,7 +31,3 @@ export default {
   }
 };
 </script>
-
-<style>
-
-</style>

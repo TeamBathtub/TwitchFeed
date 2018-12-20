@@ -96,7 +96,16 @@ export default {
       },
       body: JSON.stringify(favorite)
     })
-      .then(response => response.json());
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+        
+        return response.json() 
+          .then(error => {
+            return Promise.reject(error);
+          });
+      });
   },
   getStreamerId(id) {
     return fetch(`/api/favorites/${id}`, {
@@ -148,7 +157,7 @@ export default {
   getAllFavorites() {
     return fetch('/api/community', getOptions('Get'))
       .then(response => response.json()); 
-  },
+  }
 };
 
 

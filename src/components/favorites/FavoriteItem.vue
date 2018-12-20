@@ -1,12 +1,11 @@
 <template>
-  <section>
+  <section v-if="twitchFavorite">
     <li class="container">
       <FavoriteDisplay 
-        :favorite="favorite"
-        :onDelete="onDelete"
+        :twitchFavorite="twitchFavorite"
       />
     </li>
-    <!-- <button @click="handleDelete"> 🗑️ Delete </button> -->
+    <button @click="handleDelete"> 🗑️ Delete </button>
   </section>
 </template>
 
@@ -14,15 +13,28 @@
 import api from '../../services/api';
 import FavoriteDisplay from './FavoriteDisplay';
 export default {
+  data() {
+    return {
+      twitchFavorite: null
+    };
+  },
   props: {
-    favorite: Object,
-    onDelete: Function
+    favorite: Object
   },
   created() {
     api.getStreamerDetails(this.favorite.userName)
       .then(response => {
-        this.favorite = response.channels[0];
+        this.twitchFavorite = response.channels[0];
       });
+  },
+  methods: {
+    handleDelete() {
+      api.deleteStreamer(this.favorite.userId)
+        .then(() => {
+          console.log('here from delete');
+          this.$router.push('/favorites');
+        });
+    }
   },
   components: {
     FavoriteDisplay
@@ -46,7 +58,5 @@ li {
   margin-bottom: 20px;
   text-align: center;
   position: relative;
-
 }
 </style>
-

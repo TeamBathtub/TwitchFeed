@@ -1,20 +1,8 @@
 <template>
-<section>
-  <table align="center" v-if="stat">
-     <thead>
-       <tr>
-         <th>Streamer</th>
-         <th>Average</th>
-       </tr>
-     </thead>
-     <tbody>
        <tr>
          <td> {{stat.user_name}} </td>
          <td> {{stat.average}} </td>
        </tr>
-     </tbody>
-    </table>
-  </section>
 </template>
 
 <script> 
@@ -26,5 +14,16 @@ export default {
 </script>
 
 <style>
-
+tr {
+  text-align: center;
+}
+table tr:nth-child(odd) td{
+  background-color: rgb(241, 241, 241);
+}
+table tr:nth-child(even) td{
+  background-color: rgb(227, 227, 227);
+}
+td {
+  font-size: 3vh;
+}
 </style>

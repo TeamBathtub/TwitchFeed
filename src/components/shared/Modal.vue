@@ -3,9 +3,8 @@
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
     <button class="close" @click="onClose">X</button>
-      <h2>Display Name : {{stream.user_name}}</h2>
-      <h3>Current Streaming View Counts: {{stream.viewer_count}}</h3>
-      <!-- <button @click="handleAdd"> Add to Favorites </button> -->
+      <h2>{{stream.user_name}}</h2>
+      <h3>👤{{stream.viewer_count}}</h3>
     </div>
   </div>
  </transition>
@@ -25,25 +24,23 @@ export default {
     };
   }, 
   created() {
-    console.log('Modal created');
     this.documentListener = event => {
       if(event.keyCode === 27) {
-        console.log('closing');
         this.onClose();
       }
     };
     document.addEventListener('keyup', this.documentListener);
+    console.log(this.stream);
   
   },
   destroyed() {
     document.removeEventListener('keyup', this.documentListener);
-  }
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .modal {
-  margin-top: 20pt;
   position: fixed;
   top: 0; left: 0;
   height: 100%;
@@ -52,7 +49,8 @@ export default {
   z-index: 99;
   justify-content: center;
   align-items: center;
-  background-color:rgba(187, 15, 173, .9);
+  background-color:rgba(218, 218, 218, 0.747);
+  text-align: center;
 }
 .content {
   position: relative;
@@ -73,10 +71,10 @@ export default {
 } 
 .fade-enter-active, .fade-leave-active {
   transition: all 1s;
-  background-color:rgba(187, 15, 173, 0.8);
+  background-color:rgba(218, 218, 218, 0.747);
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
-  background-color:rgba(187, 15, 173, 0.8);
+  background-color:white;
 }
 </style>

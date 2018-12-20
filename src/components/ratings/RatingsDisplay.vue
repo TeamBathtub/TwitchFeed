@@ -3,16 +3,26 @@
       <h2>{{ randomName }}</h2>
       <img :src="randomThumbnail">
       <a :href="url">View Stream</a>
+      <RatingsForm
+      :randomName="randomName"
+      :onAdd="onAdd"
+      />
     </div>
 </template>
 
 <script>
+import RatingsForm from './RatingsForm';
+
 export default {
   props: {
     randomName: String,
     randomThumbnail: String,
-    url: String
+    url: String,
+    onAdd: Function
   },
+  components: {
+    RatingsForm
+  }
 };
 </script>
 
@@ -23,7 +33,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 300px;
-  background-color: slateblue;
+  background-color: rgb(177, 158, 214);
   padding: 2vw;
   color: white;
   border: gray outset 7px;
@@ -58,5 +68,6 @@ img {
     width: 100%;
     height: 100%;
     border: black solid 5px;
+    border-radius: 10px;
 }
 </style>
