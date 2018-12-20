@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <h2>Browze Top 100 Streamers</h2>
+    <h2>Browse Top 100 Streamers</h2>
     <Top100 class="grid" v-bind:onAdd="handleAdd" v-bind:results="results"></Top100>
 
   </section>

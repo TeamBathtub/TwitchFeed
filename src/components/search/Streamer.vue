@@ -9,10 +9,16 @@
               {{streamer.game}}
           </div>
           <div v-else>
-            Not Currently Playing
+            Not Currently Online
           </div>
         <p><span>Followers:</span><br/><br/>
           {{streamer.followers}}
+        </p>
+        <p><span>Views:</span><br/><br/>
+          {{streamer.views}}
+        </p>
+        <p><span><a v-bind:href="`${streamer.url}`">
+          Stream Url</a></span>
         </p>
         <button @click="handleSubmit">Add to Favorites</button>
       </div>
@@ -64,5 +70,9 @@ img {
   z-index: 1;
   color: white;
   text-align: center;
+}
+a {
+  background: white;
+  color: purple;
 }
 </style>
