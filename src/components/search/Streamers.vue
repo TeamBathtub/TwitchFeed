@@ -56,9 +56,9 @@ export default {
       this.searchStreamers();
     },
     searchStreamers() {
-      api.getStreamerDetails(this.search)
+      api.getStreamers(this.search)
         .then(response => {
-          this.streamer = response.channels[0];
+          this.streamer = response.data[0];
         })
         .catch(err => {
           this.error = err.message;
@@ -70,7 +70,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 h1 {
   text-align: center;

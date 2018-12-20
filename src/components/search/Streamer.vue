@@ -1,27 +1,14 @@
 <template>
   <li>
+    <h2>{{streamer.login}}</h2>
     <div class="container">
-      <h2 class="info">{{streamer.display_name}}</h2>
-      <img v-bind:src="streamer.profile_banner">
       <div class="info">
-        <p><span>Game:</span></p>
-          <div v-if="streamer.game">
-              {{streamer.game}}
-          </div>
-          <div v-else>
-            Not Currently Online
-          </div>
-        <p><span>Followers:</span><br/><br/>
-          {{streamer.followers}}
-        </p>
-        <p><span>Views:</span><br/><br/>
-          {{streamer.views}}
-        </p>
-        <p><span><a v-bind:href="`${streamer.url}`" target="_blank">
-          Stream Url</a></span>
+        <p><span>View Count:</span><br/><br/>
+          {{streamer.view_count}}
         </p>
         <button @click="handleSubmit">Add to Favorites</button>
       </div>
+      <img v-bind:src="streamer.profile_image_url">
     </div>
   </li>
 </template>
@@ -48,36 +35,22 @@ export default {
 </script>
 
 <style scoped>
+<style scoped>
 li {
-  position: relative;
-  align-items: center;
-  border: 2px solid navy;
-  box-shadow: 4px 4px 4px black;
-  background: black;
   list-style-type: none;
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.info {
+   padding-right: 10px;
 }
 span {
   font-weight: bold;
 }
 img {
-  max-height: 300px;
-  width: 100%;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  opacity: 0.5;
-  object-fit: cover;
-}
-.info {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-}
-a {
-  background: white;
-  color: purple;
+  height: 130px;
 }
 </style>

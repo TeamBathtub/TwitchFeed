@@ -8,13 +8,16 @@
         <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
       </div>
       <div class="info">
-        <p><span>Game:</span></p>
-          <div v-if="favorite.game">
-              {{favorite.game}}
-          </div>
-          <div v-else>
-            Not Currently Online
-          </div>
+        <p><span>Online Status:</span></p>
+        <div v-if="favorite.game">
+            🔴 Online <br/>
+            <p><span>Currently:</span></p>
+            {{favorite.game}}
+        </div>
+        <div v-else>
+          Offline
+        </div>
+
         <p><span>Followers:</span><br/><br/>
           {{favorite.followers}}
         </p>
