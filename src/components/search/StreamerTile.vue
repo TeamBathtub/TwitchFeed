@@ -1,8 +1,8 @@
 <template>
   <section>
     <h3>#{{index + 1}} {{result.user_name}}</h3>
-    <p>Number of Viewers: {{result.viewer_count}}</p>
-    <button @click="handleAdd">Add to Favorites</button>
+    <p> 👤{{result.viewer_count}}</p>
+    <button @click="handleAdd">❤️Add to Favorites</button>
   </section>
 </template>
 
@@ -21,6 +21,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+section {
+  align-items: center;
+  text-align: center;
+  border: gray outset 3px;
+  padding: 1vw;
+}
 
+button:hover {
+  border-color: aqua;
+}
 </style>
