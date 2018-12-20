@@ -98,9 +98,19 @@ export default {
     })
       .then(response => response.json());
   },
-  deleteStreamer(userId) {
+  getStreamerId(id) {
+    return fetch(`/api/favorites/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token
+      }
+    })
+      .then(response => response.json()); 
+  },
+  deleteStreamer(name) {
     console.log('hello');
-    return fetch(`/api/favorites/${userId}`, {
+    return fetch(`/api/favorites/${name}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
