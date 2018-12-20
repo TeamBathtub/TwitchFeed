@@ -28,6 +28,10 @@ export default {
       .then(response => {
         return this.favorites = response; 
       });
+    // api.getStreamerId(this.$route.params.id)
+    //   .then(favorite => {
+    //     this.favorite = favorite; 
+    //   });
   }
 };
 </script>

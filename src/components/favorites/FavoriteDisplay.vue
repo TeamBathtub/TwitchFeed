@@ -33,9 +33,19 @@
 </template>
 
 <script>
+// import api from '../../services/api';
 export default {
   props: {
     favorite: Object
+    // onDelete: Function
+  // },
+  // methods: {
+  //   handleDelete() {
+  //     api.deleteStreamer(this.favorite.id)
+  //       .then(() => {
+  //         this.$router.push('/favorites');
+  //       });
+  //   }
   }
 };
 </script>

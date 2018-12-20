@@ -12,9 +12,6 @@
 export default {
   props: {
     favorite: Object
-  },
-  created() {
-    console.log(this.favorite);
   }
 };
 </script>
