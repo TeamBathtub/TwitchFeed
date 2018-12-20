@@ -33,6 +33,7 @@ a {
   padding: 8px;
   text-align: center;
   border: gray 2px solid;
+  font-size: 1.2rem;
 }
 a:hover {
   color: white;
@@ -45,10 +46,10 @@ a:hover {
   border-color: #B19ED6;
 }
 img {
-    width: 100%;
-    height: 100%;
-    border: black solid 5px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+  width: 100%;
+  height: 100%;
+  border: black solid 5px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 </style>

@@ -56,6 +56,7 @@ ul {
   padding: 0;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  justify-items: center;
 }
 section {
   margin: 20px;
