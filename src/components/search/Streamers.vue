@@ -68,7 +68,13 @@ export default {
         });
     },
     handleAdd(favorite) {
-      return api.addStreamer(favorite);
+      // if() {
+      //   alert('Favorite added!')
+      //   return api.addStreamer(favorite);
+      // }
+      // else {
+      //   alert('You ')
+      // }
     }
   }
 };
