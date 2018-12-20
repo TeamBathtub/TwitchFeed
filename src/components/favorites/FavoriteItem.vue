@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <section v-if="twitchFavorite">
     <li class="container">
       <FavoriteDisplay 
-        :favorite="favorite"
+        :twitchFavorite="twitchFavorite"
       />
     </li>
     <button @click="handleDelete"> 🗑️ Delete </button>
@@ -13,13 +13,18 @@
 import api from '../../services/api';
 import FavoriteDisplay from './FavoriteDisplay';
 export default {
+  data() {
+    return {
+      twitchFavorite: null
+    };
+  },
   props: {
     favorite: Object
   },
   created() {
     api.getStreamerDetails(this.favorite.userName)
       .then(response => {
-        this.favorite = response.channels[0];
+        this.twitchFavorite = response.channels[0];
       });
   },
   methods: {

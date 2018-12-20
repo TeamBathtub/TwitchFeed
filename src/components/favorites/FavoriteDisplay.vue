@@ -1,30 +1,30 @@
 <template>
   <section>
-    <h2 class="info">{{favorite.display_name}}</h2>
-      <div v-if="favorite.profile_banner">
-        <img v-bind:src="favorite.profile_banner">
+    <h2 class="info">{{twitchFavorite.display_name}}</h2>
+      <div v-if="twitchFavorite.profile_banner">
+        <img v-bind:src="twitchFavorite.profile_banner">
       </div>
       <div v-else>
         <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
       </div>
       <div class="info">
         <p><span>Online Status:</span></p>
-        <div v-if="favorite.game">
+        <div v-if="twitchFavorite.game">
             🔴 Online <br/>
             <p><span>Currently:</span></p>
-            {{favorite.game}}
+            {{twitchFavorite.game}}
         </div>
         <div v-else>
           Offline
         </div>
 
         <p><span>Followers:</span><br/><br/>
-          {{favorite.followers}}
+          {{twitchFavorite.followers}}
         </p>
         <p><span>Views:</span><br/><br/>
-          {{favorite.views}}
+          {{twitchFavorite.views}}
         </p>
-        <p><span><a v-bind:href="`${favorite.url}`" target="_blank">
+        <p><span><a v-bind:href="`${twitchFavorite.url}`" target="_blank">
           Stream Url</a></span>
         </p>
       </div>
@@ -35,7 +35,7 @@
 <script>
 export default {
   props: {
-    favorite: Object
+    twitchFavorite: Object
   }
 };
 </script>
