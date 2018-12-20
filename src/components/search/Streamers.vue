@@ -10,6 +10,9 @@
           v-bind:streamer="streamer"
           v-bind:onAdd="handleAdd"/>
       </ul>
+      <div v-else>
+        <p>No results found.</p>
+      </div>
     </div>
 
     <h2>Browse Top 100 Streamers</h2>
