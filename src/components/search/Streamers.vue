@@ -6,7 +6,7 @@
     
     <div class="search-container">
       <ul v-if="streamer">
-        <Streamer 
+        <StreamerResult 
           v-bind:streamer="streamer"
           v-bind:onAdd="handleAdd"/>
       </ul>
@@ -20,7 +20,7 @@
 
 <script>
 import api from '../../services/api.js';
-import Streamer from './Streamer.vue';
+import StreamerResult from './StreamerResult.vue';
 import StreamerSearch from './StreamerSearch.vue';
 import Top100 from './Top100.vue';
 export default {
@@ -33,7 +33,7 @@ export default {
     };
   },
   components: {
-    Streamer,
+    StreamerResult,
     StreamerSearch,
     Top100
   },
