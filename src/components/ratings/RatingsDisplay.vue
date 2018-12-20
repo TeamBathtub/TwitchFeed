@@ -3,16 +3,26 @@
       <h2>{{ randomName }}</h2>
       <img :src="randomThumbnail">
       <a :href="url">View Stream</a>
+      <RatingsForm
+      :randomName="randomName"
+      :onAdd="onAdd"
+      />
     </div>
 </template>
 
 <script>
+import RatingsForm from './RatingsForm';
+
 export default {
   props: {
     randomName: String,
     randomThumbnail: String,
-    url: String
+    url: String,
+    onAdd: Function
   },
+  components: {
+    RatingsForm
+  }
 };
 </script>
 
