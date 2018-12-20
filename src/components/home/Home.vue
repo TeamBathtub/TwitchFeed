@@ -33,13 +33,10 @@ export default {
   created() {
     api.getTopStreamers()
       .then(response => {
-        console.log('response', response);
         return this.streams = response;
-      
       })
       .then(() => this.labels = this.getLabels())
       .then(() => this.viewerCounts = this.getViewerCounts());
-       
   },
   methods: {
     getLabels() {
