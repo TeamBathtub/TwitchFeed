@@ -1,19 +1,14 @@
 <template>
   <li>
-    <div v-if="streamer !== false">
-      <h2>{{streamer.display_name}}</h2>
-      <div class="container">
-        <div class="info">
-          <p><span>View Count:</span><br/><br/>
-            {{streamer.view_count}}
-          </p>
-          <button @click="handleSubmit">Add to Favorites</button>
-        </div>
-        <img v-bind:src="streamer.profile_image_url">
+    <h2>{{streamer.display_name}}</h2>
+    <div class="container">
+      <div class="info">
+        <p><span>View Count:</span><br/><br/>
+          {{streamer.view_count}}
+        </p>
+        <button @click="handleSubmit">Add to Favorites</button>
       </div>
-    </div>
-    <div v-else>
-      
+      <img v-bind:src="streamer.profile_image_url">
     </div>
   </li>
 </template>
