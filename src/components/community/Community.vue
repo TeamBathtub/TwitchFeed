@@ -1,5 +1,5 @@
 <template>
-  <section> 
+  <section id="container"> 
     <h1>Community</h1>
     <table>
       <thead>
@@ -60,6 +60,10 @@ export default {
 </script>
 
 <style>
+#container {
+  display: flex;
+  flex-flow: column;
+}
 h1 {
   text-align: center;
   font-size: 6vh;
