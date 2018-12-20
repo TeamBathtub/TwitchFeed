@@ -37,5 +37,6 @@ export default {
 .item:hover {
   background-color: rgba(177, 158, 214, 0.2);
   box-shadow: 3pt 3pt 3pt black;
+  cursor: pointer;
 }
 </style>
