@@ -47,6 +47,6 @@ input {
   border: black solid 1px; 
 }
 button {
-  
+  font-size: 2vh;
 }
 </style>
