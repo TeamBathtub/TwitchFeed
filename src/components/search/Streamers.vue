@@ -56,7 +56,7 @@ export default {
       this.searchStreamers();
     },
     searchStreamers() {
-      api.getStreamers(this.search)
+      api.getStreamerDetails(this.search)
         .then(response => {
           this.streamer = response.channels[0];
         })
