@@ -32,7 +32,8 @@ export default {
     return {
       streamer: null,
       results: null,
-      search: search ? decodeURIComponent(this.$route.query.search) : ''
+      search: search ? decodeURIComponent(this.$route.query.search) : '',
+      favorite: true
     };
   },
   components: {
@@ -68,7 +69,15 @@ export default {
         });
     },
     handleAdd(favorite) {
-      return api.addStreamer(favorite);
+      return api.addStreamer(favorite)
+        .then(() => {
+          if(!this.favorite) {
+            alert('Favorited already');
+          }
+          else {
+            alert('Favorite has been added');
+          }
+        });
     }
   }
 };
