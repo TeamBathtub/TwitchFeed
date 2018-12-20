@@ -86,9 +86,14 @@ export default {
     })
       .then(response => response.json());
   },
-  deleteStreamer(id) {
-    return fetch(`/api/favorites/${id}`, {
-      method: 'DELETE'
+  deleteStreamer(userId) {
+    console.log('hello');
+    return fetch(`/api/favorites/${userId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': token
+      }
     })
       .then(response => response.json());
   }, 
@@ -117,7 +122,11 @@ export default {
   getStats() {
     return fetch('/api/ratings/stats', getOptions('GET'))
       .then(response => response.json());
-  }
+  }, 
+  getAllFavorites() {
+    return fetch('/api/community', getOptions('Get'))
+      .then(response => response.json()); 
+  },
 };
 
 

@@ -7,7 +7,7 @@
         :url="url"
       />
     </li>
-    <!-- <button @click="handleDelete"> Delete </button> -->
+    <button @click="handleDelete"> 🗑️ Delete </button>
   </section>
 </template>
 
@@ -41,11 +41,18 @@ export default {
     },
     makeUrl() {
       return this.url = 'https://www.twitch.tv/' + this.favorite.userName;
+    },
+    handleDelete() {
+      api.deleteStreamer(this.favorite.userId)
+        .then(() => {
+          console.log('here from delete');
+          this.$router.push('/favorites');
+        });
     }
   },
   components: {
     FavoriteDisplay
-  }
+  },
 };
 </script>
 
