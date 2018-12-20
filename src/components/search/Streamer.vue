@@ -1,17 +1,21 @@
 <template>
   <li>
-    <h2>{{streamer.display_name}}</h2>
-    <div class="container">
+    <div class="info">
+      <h2>{{streamer.display_name}}</h2>
+      <img v-bind:src="streamer.profile_banner">
       <div class="info">
-        <p><span>Game:</span><br/><br/>
-          {{streamer.game}}
-        </p>
+        <p><span>Game:</span></p>
+          <div v-if="streamer.game">
+              {{streamer.game}}
+          </div>
+          <div v-else>
+            Not Currently Playing
+          </div>
         <p><span>Followers:</span><br/><br/>
           {{streamer.followers}}
         </p>
         <button @click="handleSubmit">Add to Favorites</button>
       </div>
-      <img v-bind:src="streamer.profile_banner">
     </div>
   </li>
 </template>
@@ -34,26 +38,31 @@ export default {
       this.onAdd(streamer);
     }
   }
-
 };
 </script>
 
 <style scoped>
 li {
-  list-style-type: none;
-  text-align: center;
-}
-.container {
+  position: relative;
   display: flex;
-  justify-content: center;
-}
-.info {
-   padding-right: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid navy;
+  box-shadow: 4px 4px 4px black;
+  background: black;
 }
 span {
   font-weight: bold;
 }
 img {
-  height: 130px;
+  max-height: 300px;
+  object-fit: cover;
+}
+.info {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
 }
 </style>
