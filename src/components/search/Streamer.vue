@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h2>{{streamer.login}}</h2>
+    <h2>{{streamer.display_name}}</h2>
     <div class="container">
       <div class="info">
         <p><span>View Count:</span><br/><br/>
@@ -31,7 +31,6 @@ export default {
       this.onAdd(streamer);
     }
   }
-
 };
 </script>
 

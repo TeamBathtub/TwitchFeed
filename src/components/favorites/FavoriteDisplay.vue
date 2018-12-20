@@ -1,13 +1,33 @@
 <template>
   <section>
-    <h2>{{favorite.userName}}</h2>
-    <div v-if="thumbnail">
-      <img :src="thumbnail"/>
-    </div>
-    <div v-else>
-      <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
-    </div>
-    <a :href="url" target="_blank">View Stream</a>
+    <h2 class="info">{{favorite.display_name}}</h2>
+      <div v-if="favorite.profile_banner">
+        <img v-bind:src="favorite.profile_banner">
+      </div>
+      <div v-else>
+        <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
+      </div>
+      <div class="info">
+        <p><span>Online Status:</span></p>
+        <div v-if="favorite.game">
+            🔴 Online <br/>
+            <p><span>Currently:</span></p>
+            {{favorite.game}}
+        </div>
+        <div v-else>
+          Offline
+        </div>
+
+        <p><span>Followers:</span><br/><br/>
+          {{favorite.followers}}
+        </p>
+        <p><span>Views:</span><br/><br/>
+          {{favorite.views}}
+        </p>
+        <p><span><a v-bind:href="`${favorite.url}`" target="_blank">
+          Stream Url</a></span>
+        </p>
+      </div>
     <!-- <button @click="handleDelete"> Delete </button> -->
   </section>
 </template>
@@ -15,8 +35,6 @@
 <script>
 export default {
   props: {
-    url: String,
-    thumbnail: String,
     favorite: Object
   }
 };
@@ -47,14 +65,16 @@ a:hover {
   text-decoration: none;
   padding: 8px;
   margin: 1vh;
-  text-align: center;
   border-color: #B19ED6;
 }
 img {
-  width: 100%;
-  height: 100%;
+  height: 100px;
+  width: 300px;
   border: black solid 5px;
   margin-top: 10px;
-  margin-bottom: 30px;
+ 
+}
+span {
+  font-weight: bold;
 }
 </style>

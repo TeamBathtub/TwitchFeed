@@ -3,8 +3,6 @@
     <li class="container">
       <FavoriteDisplay 
         :favorite="favorite"
-        :thumbnail="thumbnail"
-        :url="url"
       />
     </li>
     <button @click="handleDelete"> 🗑️ Delete </button>
@@ -16,32 +14,15 @@ import api from '../../services/api';
 import FavoriteDisplay from './FavoriteDisplay';
 export default {
   props: {
-    url: String,
-    thumbnail: String,
     favorite: Object
   },
   created() {
-    this.makeUrl();
-    this.getStreamerThumbnail();
+    api.getStreamerDetails(this.favorite.userName)
+      .then(response => {
+        this.favorite = response.channels[0];
+      });
   },
   methods: {
-    getStreamerThumbnail() {
-      api.getStreamers(this.favorite.userName)
-        .then(response => {
-          if(response.data[0].profile_image_url) {
-            return this.thumbnail = response.data[0].profile_image_url;
-          }
-          else {
-            return this.thumbnail = 'https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg';
-          }
-        })
-        .catch(err => {
-          this.error = err.message;
-        });
-    },
-    makeUrl() {
-      return this.url = 'https://www.twitch.tv/' + this.favorite.userName;
-    },
     handleDelete() {
       api.deleteStreamer(this.favorite.userId)
         .then(() => {
@@ -60,7 +41,7 @@ export default {
 .container {
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 300px;
   background-color: slateblue;
@@ -71,6 +52,8 @@ export default {
 li {
   margin-bottom: 20px;
   text-align: center;
+  position: relative;
+
 }
 </style>
 
