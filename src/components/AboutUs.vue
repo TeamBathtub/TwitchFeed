@@ -9,7 +9,7 @@
             <div class="text">Tyler Corbett</div>
           </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempore, reiciendis voluptas amet commodi impedit at corrupti esse nisi minus voluptates repellat vitae excepturi assumenda officia optio ipsam enim pariatur.</p>
+      <p>The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.</p>
     </div>
 
     <div class="person">
@@ -24,7 +24,7 @@
 
     <div class="person">
       <div class="container">
-        <img src="../../assets/tyler.jpg" alt="Avatar" class="image" style="width:100%">
+        <img src="../../assets/kristen.jpg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
             <div class="text">Kristen Hortsch</div>
           </div>
