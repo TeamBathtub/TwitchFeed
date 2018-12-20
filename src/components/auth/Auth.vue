@@ -1,10 +1,12 @@
 <template>
   <section class="wrapper">
     <div class="video-wrap">
+      <video src="../../../assets/twitchClip.mp4" autoplay="" loop="" controls muted></video>
     </div>
     <div class="overlay" v-if="method === 'signin'">
+      <img src="../../../assets/twitch-logo-purple.png" alt="">
       <h1> Welcome to Twitch Feed </h1>
-      <form @submit.prevent="handleSignInSubmit(profile)">
+      <form class="form" @submit.prevent="handleSignInSubmit(profile)">
         <label>
           Username: 
           <input v-model="profile.username" required>
@@ -13,16 +15,16 @@
           Password:
           <input type="password" v-model="profile.password" required> 
         </label>
-          <button> Sign In </button>
+          <button class="signIn"> Sign In </button>
     </form>
          <p>
         Need to Register?
-        <button @click="method = 'signup'"> Sign Up </button>
+        <button class="signUp" @click="method = 'signup'"> Sign Up </button>
         </p>
     </div>
       <div class="overlay" v-else>
         <h2>Sign Up</h2>
-        <form @submit.prevent="handleSignUpSubmit(profile)"> 
+        <form class="form" @submit.prevent="handleSignUpSubmit(profile)"> 
         <label>
           Name:
           <input v-model="profile.firstName" required>
@@ -40,7 +42,7 @@
           <input  v-model="profile.password" required>
         </label>
         <label>
-          <button>Sign Up</button>
+          <button class="signUp">Sign Up</button>
         </label>
       </form> 
     </div>
@@ -84,19 +86,25 @@ export default {
   }
 };
 </script>
-<style>
-/* body {
+<style scoped>
+.wrapper {
   font-size: 40pt;
-  color:rgb(255, 255, 255);
+  color:rgb(75, 56, 122);
+  text-shadow: 1pt 3pt 1pt white;
+  font-family: 'Acme', sans-serif;
 }
 label {
   font-size: 20pt;
 }
-h1 {
-  margin-top: 100pt;
+input {
+  height: 50px;
+  width: 200px;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 section {
   text-align: center;
+  z-index: 99;
 }
 .wrapper {
   height: 100%;
@@ -108,9 +116,14 @@ section {
 .video-wrap {
   position: fixed;
   width: 100%; 
-  height: 100%;
+  height: 100;
   opacity: .3;
-  z-index: 1;
+  z-index: -1;
+   -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 .overlay {
   height: 100%;
@@ -119,5 +132,21 @@ section {
   left: 0;
   background-color: rgba(103, 17, 129, 0.221);
   opacity: .6;
-} */
+}
+.signIn, .signUp {
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  background-color:rgb(88, 15, 162);
+  color:white;
+  border: 3px solid black; 
+  border-radius: 10px;
+}
+img {
+  height: 100px;
+  width: 100px;
+  display: block;
+}
 </style>
+
