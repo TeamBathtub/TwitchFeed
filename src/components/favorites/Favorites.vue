@@ -4,7 +4,8 @@
       <ul>
         <FavoriteItem v-for="favorite in favorites"
           :key="favorite.id"
-          :favorite="favorite" />
+          :favorite="favorite"
+           />
       </ul>
   </section>
 </template>
@@ -17,6 +18,7 @@ export default {
   data() {
     return {
       favorites: null
+      
     };
   },
   components: {
@@ -30,3 +32,5 @@ export default {
   }
 };
 </script>
+
+
