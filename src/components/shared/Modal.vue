@@ -4,7 +4,7 @@
     <div class="content" @click.stop="">
     <button class="close" @click="onClose">X</button>
       <h2>Display Name : {{stream.user_name}}</h2>
-      <h3>Number of View Counts: {{stream.viewer_count}}</h3>
+      <h3>Current Streaming View Counts: {{stream.viewer_count}}</h3>
       <!-- <button @click="handleAdd"> Add to Favorites </button> -->
     </div>
   </div>

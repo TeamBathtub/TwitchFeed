@@ -11,7 +11,7 @@
         </label>
         <label>
           Password:
-          <input v-model="profile.password" required> 
+          <input type="password" v-model="profile.password" required> 
         </label>
           <button> Sign In </button>
     </form>

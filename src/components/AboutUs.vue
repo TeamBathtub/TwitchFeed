@@ -14,7 +14,7 @@
 
     <div class="person">
       <div class="container">
-        <img src="../../assets/tyler.jpg" alt="Avatar" class="image" style="width:100%">
+        <img src="../../assets/marcy.jpg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
             <div class="text">Marcy Silverman</div>
           </div>
