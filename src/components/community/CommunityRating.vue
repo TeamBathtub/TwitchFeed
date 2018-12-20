@@ -17,4 +17,10 @@ export default {
 tr {
   text-align: center;
 }
+table tr:nth-child(odd) td{
+  background-color: rgb(241, 241, 241);
+}
+table tr:nth-child(even) td{
+  background-color: rgb(227, 227, 227);
+}
 </style>

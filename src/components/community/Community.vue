@@ -74,4 +74,8 @@ h1 {
   width: 25vw;
   justify-content: center;
 }
+thead {
+  background-color: rgb(177, 158, 214);
+  color: white;
+}
 </style>
