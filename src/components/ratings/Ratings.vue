@@ -89,6 +89,7 @@ button {
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin-bottom: 10vh;
 }
 </style>
 
