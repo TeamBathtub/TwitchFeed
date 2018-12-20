@@ -1,7 +1,7 @@
 <template>
   <section>
     <div id="chart">
-      <h3>Most Viewers Currently</h3>
+      <h3>Home</h3>
         <BarChart
         v-if="labels && viewerCounts" 
         :labels="labels"

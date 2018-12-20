@@ -99,8 +99,7 @@ nav a:hover {
 }
 body {
   margin: 0;
-  font-family: "Times New Roman", Times, serif;
-}
+font-family: 'Mukta', sans-serif;}
 #user {
   display: flex;
   justify-content: center;
