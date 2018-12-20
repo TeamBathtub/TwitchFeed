@@ -5,7 +5,6 @@
         :twitchFavorite="twitchFavorite"
       />
     </li>
-    <button @click="handleDelete"> 🗑️ Delete </button>
   </section>
 </template>
 
@@ -19,7 +18,8 @@ export default {
     };
   },
   props: {
-    favorite: Object
+    favorite: Object,
+    onDelete: Function
   },
   created() {
     api.getStreamerDetails(this.favorite.userName)
