@@ -5,6 +5,7 @@
         <FavoriteItem v-for="favorite in favorites"
           :key="favorite.id"
           :favorite="favorite"
+          :onDelete="handleDelete"
            />
       </ul>
   </section>
@@ -28,10 +29,10 @@ export default {
       .then(response => {
         return this.favorites = response; 
       });
-    // api.getStreamerId(this.$route.params.id)
-    //   .then(favorite => {
-    //     this.favorite = favorite; 
-    //   });
+    api.getStreamerId(this.$route.params.id)
+      .then(favorite => {
+        this.favorite = favorite; 
+      });
   }
 };
 </script>
