@@ -68,5 +68,6 @@ h3 {
 #list {
   background-color: rgba(227, 227, 227, 0.5);
   padding: 1vh;
+  margin-top: 0;
 }
 </style>
