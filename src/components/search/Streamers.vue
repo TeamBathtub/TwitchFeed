@@ -6,10 +6,13 @@
     
     <div class="search-container">
       <ul v-if="streamer">
-        <Streamer 
+        <StreamerResult 
           v-bind:streamer="streamer"
           v-bind:onAdd="handleAdd"/>
       </ul>
+      <div v-else class="no-results">
+        <p>No results found. Try another search.</p>
+      </div>
     </div>
 
     <h2>Browse Top 100 Streamers</h2>
@@ -20,7 +23,7 @@
 
 <script>
 import api from '../../services/api.js';
-import Streamer from './Streamer.vue';
+import StreamerResult from './StreamerResult.vue';
 import StreamerSearch from './StreamerSearch.vue';
 import Top100 from './Top100.vue';
 export default {
@@ -33,7 +36,7 @@ export default {
     };
   },
   components: {
-    Streamer,
+    StreamerResult,
     StreamerSearch,
     Top100
   },
@@ -87,5 +90,10 @@ h2 {
   padding: 2vh;
   border-bottom: 2px solid black;
   color: white;
+}
+.no-results {
+  text-align: center;
+  font-size: 1.2em;
+  color: red;
 }
 </style>

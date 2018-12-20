@@ -1,43 +1,42 @@
 <template>
   <section>
-    <h2 class="info">{{favorite.display_name}}</h2>
-      <div v-if="favorite.profile_banner">
-        <img v-bind:src="favorite.profile_banner">
+    <h2 class="info">{{twitchFavorite.display_name}}</h2>
+      <div v-if="twitchFavorite.profile_banner">
+        <img v-bind:src="twitchFavorite.profile_banner">
       </div>
       <div v-else>
         <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
       </div>
       <div class="info">
         <p><span>Online Status:</span></p>
-        <div v-if="favorite.game">
+        <div v-if="twitchFavorite.game">
             🔴 Online <br/>
             <p><span>Currently:</span></p>
-            {{favorite.game}}
+            {{twitchFavorite.game}}
         </div>
         <div v-else>
           Offline
         </div>
 
         <p><span>Followers:</span><br/><br/>
-          {{favorite.followers}}
+          {{twitchFavorite.followers}}
         </p>
         <p><span>Views:</span><br/><br/>
-          {{favorite.views}}
+          {{twitchFavorite.views}}
         </p>
-        <p><span><a v-bind:href="`${favorite.url}`" target="_blank">
+        <p><span><a v-bind:href="`${twitchFavorite.url}`" target="_blank">
           Stream Url</a></span>
         </p>
       </div>
-    <button @click="handleDelete"> Delete </button>
+    <!-- <button @click="handleDelete"> Delete </button> -->
   </section>
 </template>
 
 <script>
-import api from '../../services/api'; 
+import api from '../../services/api';
 export default {
   props: {
-    favorite: Object,
-    onDelete: Function
+    twitchFavorite: Object
   },
   methods: {
     handleDelete() {
@@ -47,12 +46,11 @@ export default {
           this.$router.push('/favorites');
         });
     }
-  },
+  }
 };
 </script>
 
 <style scoped>
-
 h2 {
   font-size: 20px;
   background-color: gray;
@@ -89,3 +87,4 @@ span {
   font-weight: bold;
 }
 </style>
+   
