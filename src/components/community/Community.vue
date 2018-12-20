@@ -77,7 +77,7 @@ h1 {
 thead {
   background-color: rgb(177, 158, 214);
   color: white;
-  font-size: 3vh;
+  font-size: 3.5vh;
 }
 table {
   width: 60vw;

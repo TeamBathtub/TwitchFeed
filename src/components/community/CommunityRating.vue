@@ -23,4 +23,7 @@ table tr:nth-child(odd) td{
 table tr:nth-child(even) td{
   background-color: rgb(227, 227, 227);
 }
+td {
+  font-size: 3vh;
+}
 </style>
