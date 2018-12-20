@@ -1,7 +1,12 @@
 <template>
   <section>
     <h2>{{favorite.userName}}</h2>
-    <img :src="thumbnail"/>
+    <div v-if="thumbnail">
+      <img :src="thumbnail"/>
+    </div>
+    <div v-else>
+      <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
+    </div>
     <a :href="url" target="_blank">View Stream</a>
     <!-- <button @click="handleDelete"> Delete </button> -->
   </section>
