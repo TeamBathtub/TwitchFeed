@@ -28,7 +28,12 @@ export default {
     getStreamerThumbnail() {
       api.getStreamers(this.favorite.userName)
         .then(response => {
-          return this.thumbnail = response.data[0].profile_image_url;
+          if(response.data[0].profile_image_url) {
+            return this.thumbnail = response.data[0].profile_image_url;
+          }
+          else {
+            return this.thumbnail = 'https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg';
+          }
         })
         .catch(err => {
           this.error = err.message;
