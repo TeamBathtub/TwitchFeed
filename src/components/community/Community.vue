@@ -5,7 +5,7 @@
       <thead>
        <tr>
          <th>Streamer</th>
-         <th>Average</th>
+         <th>Average Rating</th>
        </tr>
      </thead>
      <tbody>
@@ -77,5 +77,12 @@ h1 {
 thead {
   background-color: rgb(177, 158, 214);
   color: white;
+  font-size: 3vh;
+}
+table {
+  width: 60vw;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20vw 5vh 20vw;
 }
 </style>
