@@ -1,6 +1,6 @@
 <template>
   <section class="streamers">
-    <h1>Search by Streamer Name</h1>
+    <h1>Search</h1>
 
     <StreamerSearch v-bind:onSearch="handleSearch" v-bind:search="search"/>
     
@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <h2>View Top 100 Streamers</h2>
+    <h2>Browze Top 100 Streamers</h2>
     <Top100 class="grid" v-bind:onAdd="handleAdd" v-bind:results="results"></Top100>
 
   </section>
@@ -74,16 +74,19 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
-  font-size: 5vh;
+  font-size: 6vh;
   margin: 2vh 35vw 2vh 35vw;
   border: solid gray 2px;
   border-radius: 20vw;
   color: gray;
   width: 25vw;
   justify-content: center;
-  padding: 1vw;
 }
-section {
-  padding: 20px;
+h2 {
+  text-align: center;
+  background-color: rgb(177, 158, 214);
+  padding: 2vh;
+  border-bottom: 2px solid black;
+  color: white;
 }
 </style>
