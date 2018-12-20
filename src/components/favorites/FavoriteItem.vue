@@ -1,6 +1,6 @@
 <template>
   <section>
-    <li>
+    <li class="container">
       <FavoriteDisplay 
         :favorite="favorite"
         :thumbnail="thumbnail"
@@ -45,6 +45,20 @@ export default {
 </script>
 
 <style scoped>
-
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  background-color: slateblue;
+  padding: 2vw;
+  color: white;
+  border: gray outset 7px;
+}
+li {
+  margin-bottom: 20px;
+  text-align: center;
+}
 </style>
 
