@@ -3,10 +3,9 @@
     <li class="container">
       <FavoriteDisplay 
         :favorite="favorite"
-        
       />
     </li>
-    <!-- <button @click="handleDelete"> Delete </button> -->
+    <button @click="handleDelete"> 🗑️ Delete </button>
   </section>
 </template>
 
@@ -23,9 +22,18 @@ export default {
         this.favorite = response.channels[0];
       });
   },
+  methods: {
+    handleDelete() {
+      api.deleteStreamer(this.favorite.userId)
+        .then(() => {
+          console.log('here from delete');
+          this.$router.push('/favorites');
+        });
+    }
+  },
   components: {
     FavoriteDisplay
-  }
+  },
 };
 </script>
 

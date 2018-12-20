@@ -21,9 +21,6 @@
 export default {
   props: {
     stat: Object
-  },
-  created() {
-    console.log(this.stat);
   }
 };
 </script>
