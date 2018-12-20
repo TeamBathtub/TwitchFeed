@@ -1,5 +1,6 @@
 <template>
   <section>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <h1>About Us</h1>
 
     <div class="person">
@@ -9,7 +10,7 @@
             <div class="text">Tyler Corbett</div>
           </div>
       </div>
-      <p>The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.</p>
+      <p>Tyler's About</p>
     </div>
 
     <div class="person">
@@ -19,7 +20,7 @@
             <div class="text">Marcy Silverman</div>
           </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempore, reiciendis voluptas amet commodi impedit at corrupti esse nisi minus voluptates repellat vitae excepturi assumenda officia optio ipsam enim pariatur.</p>
+      <p>Budding Developer that loves naping, working out, eating, and petting dogs.</p>
     </div>
 
     <div class="person">
@@ -36,6 +37,11 @@
 </template>
 
 <style scoped>
+section {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 15pt;
+
+}
 .container {
   position: relative;
   width: 25%;
@@ -86,6 +92,7 @@
   font-size: 4vh;
 }
 h1 {
+  align-content: center;
   text-align: center;
   font-size: 6vh;
   margin: 2vh 35vw 2vh 35vw;
@@ -94,5 +101,6 @@ h1 {
   color: gray;
   width: 25vw;
   justify-content: center;
+
 }
 </style>

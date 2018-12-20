@@ -86,5 +86,9 @@ img {
 span {
   font-weight: bold;
 }
+
+button {
+  border-radius: 10px;
+  width: 100px;
+}
 </style>
-   

@@ -49,7 +49,7 @@ export default {
   justify-content: space-evenly;
   align-items: center;
   width: 300px;
-  background-color: slateblue;
+  background-color:rgb(100, 33, 167);
   padding: 2vw;
   color: white;
   border: gray outset 7px;
