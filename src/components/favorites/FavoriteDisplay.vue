@@ -28,15 +28,26 @@
           Stream Url</a></span>
         </p>
       </div>
-    <!-- <button @click="handleDelete"> Delete </button> -->
+    <button @click="handleDelete"> Delete </button>
   </section>
 </template>
 
 <script>
+import api from '../../services/api'; 
 export default {
   props: {
-    favorite: Object
-  }
+    favorite: Object,
+    onDelete: Function
+  },
+  methods: {
+    handleDelete() {
+      api.deleteStreamer(this.favorite.display_name)
+        .then(() => {
+          console.log('here from delete');
+          this.$router.push('/favorites');
+        });
+    }
+  },
 };
 </script>
 

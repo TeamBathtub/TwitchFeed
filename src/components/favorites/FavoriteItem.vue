@@ -3,9 +3,10 @@
     <li class="container">
       <FavoriteDisplay 
         :favorite="favorite"
+        :onDelete="onDelete"
       />
     </li>
-    <button @click="handleDelete"> 🗑️ Delete </button>
+    <!-- <button @click="handleDelete"> 🗑️ Delete </button> -->
   </section>
 </template>
 
@@ -14,22 +15,14 @@ import api from '../../services/api';
 import FavoriteDisplay from './FavoriteDisplay';
 export default {
   props: {
-    favorite: Object
+    favorite: Object,
+    onDelete: Function
   },
   created() {
     api.getStreamerDetails(this.favorite.userName)
       .then(response => {
         this.favorite = response.channels[0];
       });
-  },
-  methods: {
-    handleDelete() {
-      api.deleteStreamer(this.favorite.userId)
-        .then(() => {
-          console.log('here from delete');
-          this.$router.push('/favorites');
-        });
-    }
   },
   components: {
     FavoriteDisplay
