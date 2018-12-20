@@ -44,14 +44,12 @@ export default {
   },
   methods: {
     handleSignUp(profile) {
-      console.log('giggles', profile);
       return api.signUp(profile)
         .then(user => {
           this.setUser(user);
         });
     },
     handleSignIn(credentials) {
-      console.log('cred', credentials);
       return api.signIn(credentials)
         .then(user => {
           console.log(user);
@@ -60,7 +58,6 @@ export default {
     },
     setUser(user) {
       this.user = user;
-      console.log('set user', user);
       if(user) {
         api.setToken(user.token);
         window.localStorage.setItem('profile', JSON.stringify(user));                                     
@@ -76,7 +73,6 @@ export default {
     }
   }
 };
-
 </script>
 
 <style>
@@ -99,7 +95,8 @@ nav a:hover {
 }
 body {
   margin: 0;
-font-family: 'Mukta', sans-serif;}
+  font-family: 'Mukta', sans-serif;
+}
 #user {
   display: flex;
   justify-content: center;
@@ -108,5 +105,4 @@ font-family: 'Mukta', sans-serif;}
   color: white;
   font-weight: bold;
 }
-
 </style>
