@@ -19,9 +19,10 @@
     <h1>Community Favorites</h1>
   <ul>
     <CommunityFavorite 
-    v-for="favorite in favorites"
-    :favorite="favorite"
-    :key="favorite.user_name" />
+      v-for="favorite in favorites"
+      :favorite="favorite"
+      :key="favorite.user_name"
+      />
   </ul>
   </section>
 </template>
@@ -41,8 +42,6 @@ export default {
   created() {
     api.getStats()
       .then(stats => this.stats = stats);
-    console.log(typeof(this.stat));
-
     api.getAllFavorites()
       .then(favorites => this.favorites = favorites);
   },

@@ -2,7 +2,6 @@
   <section>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <h1>About Us</h1>
-
     <div class="person">
       <div class="container">
         <img src="../../assets/tyler.jpg" alt="Avatar" class="image" style="width:100%">
@@ -12,7 +11,6 @@
       </div>
       <p>Tyler's About</p>
     </div>
-
     <div class="person">
       <div class="container">
         <img src="../../assets/marcy.jpg" alt="Avatar" class="image" style="width:100%">
@@ -22,7 +20,6 @@
       </div>
       <p>Budding Developer that loves naping, working out, eating, and petting dogs.</p>
     </div>
-
     <div class="person">
       <div class="container">
         <img src="../../assets/kristen.jpg" alt="Avatar" class="image" style="width:100%">
@@ -32,7 +29,6 @@
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempore, reiciendis voluptas amet commodi impedit at corrupti esse nisi minus voluptates repellat vitae excepturi assumenda officia optio ipsam enim pariatur.</p>
     </div>
-
   </section>
 </template>
 

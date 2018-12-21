@@ -3,8 +3,7 @@
     <div class="item" @click="show = true">
       <h3> #{{ index + 1 }} {{ stream.user_name }}</h3>
     </div>
-    <Modal :stream="stream" v-if="show" :onClose="() => show = false">
-    </Modal>
+    <Modal :stream="stream" v-if="show" :onClose="() => show = false"></Modal>
   </section>
 </template>
 
@@ -23,7 +22,7 @@ export default {
     return {      
       show: false
     };
-  },
+  }
 };
 </script>
 

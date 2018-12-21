@@ -2,9 +2,9 @@
 <transition name="fade">
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
-    <button class="close" @click="onClose">X</button>
-      <h2>{{stream.user_name}}</h2>
-      <h3>👤{{stream.viewer_count}}</h3>
+      <button class="close" @click="onClose">X</button>
+        <h2>{{stream.user_name}}</h2>
+        <h3>👤{{stream.viewer_count}}</h3>
     </div>
   </div>
  </transition>
@@ -29,13 +29,11 @@ export default {
         this.onClose();
       }
     };
-    document.addEventListener('keyup', this.documentListener);
-    console.log(this.stream);
-  
+    document.addEventListener('keyup', this.documentListener); 
   },
   destroyed() {
     document.removeEventListener('keyup', this.documentListener);
-  },
+  }
 };
 </script>
 

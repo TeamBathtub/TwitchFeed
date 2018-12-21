@@ -9,15 +9,14 @@
       </div>
       <div class="info">
         <p><span>Online Status:</span></p>
-        <div v-if="twitchFavorite.game">
-            🔴 Online <br/>
-            <p><span>Currently:</span></p>
-            {{twitchFavorite.game}}
-        </div>
-        <div v-else>
-          Offline
-        </div>
-
+      <div v-if="twitchFavorite.game">
+          🔴 Online <br/>
+          <p><span>Currently:</span></p>
+          {{twitchFavorite.game}}
+      </div>
+      <div v-else>
+        Offline
+      </div> 
         <p><span>Followers:</span><br/><br/>
           {{twitchFavorite.followers}}
         </p>
