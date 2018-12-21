@@ -1,5 +1,6 @@
 <template>
  <div id="app">
+
   <header> 
     <nav v-if="user">
      <RouterLink to="/">Home</RouterLink>
@@ -14,12 +15,12 @@
       Hello {{user.username}}!
     </span>
   </header>
+
   <main>
     <RouterView v-if="user" :user="user"></RouterView>
      <Auth v-else
         :onSignUp="handleSignUp"
-        :onSignIn="handleSignIn"
-      />
+        :onSignIn="handleSignIn" />
   </main>
  </div>
 </template>
@@ -27,21 +28,25 @@
 <script>
 import api from '../services/api';
 import Auth from './auth/Auth'; 
+
 export default {
   data() {
     return {
       user:null
     };
   },
+
   components: {
     Auth
   },
+
   created() {
     const json = window.localStorage.getItem('profile');
     if(json) {
       this.setUser(JSON.parse(json));
     }
   },
+
   methods: {
     handleSignUp(profile) {
       return api.signUp(profile)
@@ -49,12 +54,14 @@ export default {
           this.setUser(user);
         });
     },
+
     handleSignIn(credentials) {
       return api.signIn(credentials)
         .then(user => {
           this.setUser(user);
         });
     },
+
     setUser(user) {
       this.user = user;
       if(user) {
@@ -66,6 +73,7 @@ export default {
         window.localStorage.removeItem('profile');
       }
     },
+    
     handleLogout() {
       this.setUser(null);
       this.$router.push('/');

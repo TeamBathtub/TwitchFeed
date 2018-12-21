@@ -11,11 +11,13 @@ export default {
     search: String,
     onSearch: Function
   },
+
   data() {
     return {
       keyword: this.search || ''
     };
   },
+
   watch: {
     search(newSearch) {
       if(this.keyword !== newSearch) {
@@ -23,6 +25,7 @@ export default {
       }
     }
   },
+
   methods: {
     handleSubmit() {
       this.$router.push({

@@ -1,7 +1,6 @@
 <template>
   <section class="streamers">
     <h1>Search</h1>
-
     <StreamerSearch v-bind:onSearch="handleSearch" v-bind:search="search"/>
     
     <div class="search-container">
@@ -17,7 +16,6 @@
 
     <h2>Browse Top 100 Streamers</h2>
     <Top100 class="grid" v-bind:onAdd="handleAdd" v-bind:results="results"></Top100>
-
   </section>
 </template>
 
@@ -26,6 +24,7 @@ import api from '../../services/api.js';
 import StreamerResult from './StreamerResult.vue';
 import StreamerSearch from './StreamerSearch.vue';
 import Top100 from './Top100.vue';
+
 export default {
   data() {
     const search = this.$route.query.search;
@@ -36,16 +35,19 @@ export default {
       favorite: true
     };
   },
+
   components: {
     StreamerResult,
     StreamerSearch,
     Top100
   },
+
   created() {
     api.getTop100()
       .then(response => 
         this.results = response.data);
   },
+
   watch: {
     $route(newRoute) {
       const newSearch = newRoute.query.search;
@@ -53,11 +55,13 @@ export default {
       this.searchStreamers();
     }
   },
+
   methods: {
     handleSearch(search) {
       this.search = search || '';
       this.searchStreamers();
     },
+
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
@@ -67,6 +71,7 @@ export default {
           this.error = err.message;
         });
     },
+
     handleAdd(favorite) {
       return api.addStreamer(favorite)
         .then(() => {
@@ -81,6 +86,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 h1 {
   text-align: center;

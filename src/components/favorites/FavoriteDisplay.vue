@@ -7,16 +7,17 @@
       <div v-else>
         <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
       </div>
+
       <div class="info">
         <p><span>Online Status:</span></p>
-      <div v-if="twitchFavorite.game">
-          🔴 Online <br/>
-          <p><span>Currently:</span></p>
-          {{twitchFavorite.game}}
-      </div>
-      <div v-else>
-        Offline
-      </div> 
+        <div v-if="twitchFavorite.game">
+            🔴 Online <br/>
+            <p><span>Currently:</span></p>
+            {{twitchFavorite.game}}
+        </div>
+        <div v-else>
+          Offline
+        </div> 
         <p><span>Followers:</span><br/><br/>
           {{twitchFavorite.followers}}
         </p>
@@ -27,26 +28,17 @@
           Stream Url</a></span>
         </p>
       </div>
+      
     <button @click="onDelete(twitchFavorite.display_name)"> 🗑️ Delete </button>
   </section>
 </template>
 
 <script>
-// import api from '../../services/api';
 export default {
   props: {
     twitchFavorite: Object,
     onDelete: Function
   }
-  // methods: {
-  //   handleDelete() {
-  //     api.deleteStreamer(this.twitchFavorite.display_name)
-  //       .then(() => {
-  //         this.$router.push('/favorites');
-
-  //       });
-  //   }
-  // }
 };
 </script>
 
@@ -81,12 +73,10 @@ img {
   width: 300px;
   border: black solid 5px;
   margin-top: 10px;
- 
 }
 span {
   font-weight: bold;
 }
-
 button {
   border-radius: 10px;
   width: 100px;

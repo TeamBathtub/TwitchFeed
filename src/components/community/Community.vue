@@ -21,8 +21,7 @@
     <CommunityFavorite 
       v-for="favorite in favorites"
       :favorite="favorite"
-      :key="favorite.user_name"
-      />
+      :key="favorite.user_name" />
   </ul>
   </section>
 </template>
@@ -39,12 +38,14 @@ export default {
       favorites: null
     };
   },
+
   created() {
     api.getStats()
       .then(stats => this.stats = stats);
     api.getAllFavorites()
       .then(favorites => this.favorites = favorites);
   },
+
   methods: {
     getRatings() {
       return api.getRatings()
@@ -53,6 +54,7 @@ export default {
         });
     }
   }, 
+  
   components: {
     CommunityRating,
     CommunityFavorite

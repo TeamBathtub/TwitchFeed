@@ -6,7 +6,6 @@ import Community from './components/community/Community.vue';
 import AboutUs from './components/AboutUs';
 import Ratings from './components/ratings/Ratings.vue';
 
-
 export default new VueRouter ({
   routes : [
     { path: '/', component: Home },

@@ -11,6 +11,11 @@
 import Modal from '../shared/Modal'; 
 
 export default {
+  data() {
+    return {      
+      show: false
+    };
+  },
   props: {
     stream: Object,
     index: Number
@@ -18,11 +23,6 @@ export default {
   components: {
     Modal
   }, 
-  data() {
-    return {      
-      show: false
-    };
-  }
 };
 </script>
 

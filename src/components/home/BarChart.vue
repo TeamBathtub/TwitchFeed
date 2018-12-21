@@ -7,6 +7,7 @@ export default {
     labels: Array,
     viewerCounts: Array
   },
+  
   extends: Bar, 
   mounted() {
     this.renderChart({
@@ -22,4 +23,3 @@ export default {
   }
 };
 </script>
-

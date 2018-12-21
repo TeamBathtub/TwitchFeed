@@ -2,33 +2,36 @@
   <section>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <h1>About Us</h1>
+
     <div class="person">
       <div class="container">
         <img src="../../assets/tyler.jpg" alt="Avatar" class="image" style="width:100%">
-          <div class="middle">
-            <div class="text">Tyler Corbett</div>
-          </div>
+        <div class="middle">
+          <div class="text">Tyler Corbett</div>
+        </div>
       </div>
       <p>
         Video game and coffee enthusist. Proud father of two golden retrievers.<br/>
         <a href="https://twitter.com/thetylercorbett?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thetylercorbett</a>
       </p>
     </div>
+
     <div class="person">
       <div class="container">
         <img src="../../assets/marcy.jpg" alt="Avatar" class="image" style="width:100%">
-          <div class="middle">
-            <div class="text">Marcy Silverman</div>
-          </div>
+        <div class="middle">
+          <div class="text">Marcy Silverman</div>
+        </div>
       </div>
       <p>Budding Developer that loves napping, working out, eating, and petting dogs.</p>
     </div>
+
     <div class="person">
       <div class="container">
         <img src="../../assets/kristin.jpg" alt="Avatar" class="image" style="width:100%">
-          <div class="middle">
-            <div class="text">Kristin Hortsch</div>
-          </div>
+        <div class="middle">
+          <div class="text">Kristin Hortsch</div>
+        </div>
       </div>
       <p>
         Avid laugher, sports fan, stalker of cats, and coding (Codewars) addict!<br/>
@@ -42,7 +45,6 @@
 section {
   font-family: 'Permanent Marker', cursive;
   font-size: 15pt;
-
 }
 .container {
   position: relative;
