@@ -17,10 +17,12 @@
      </tbody>
     </table>
     <h1>Community Favorites</h1>
+  <ul>
     <CommunityFavorite 
     v-for="favorite in favorites"
     :favorite="favorite"
     :key="favorite.user_name" />
+  </ul>
   </section>
 </template>
 
@@ -88,4 +90,12 @@ table {
   justify-content: center;
   margin: 0 20vw 5vh 20vw;
 }
+ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3vw;;
+    grid-gap: 20px;
+    margin: 4vw;
+  }
 </style>
