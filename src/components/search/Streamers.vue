@@ -42,7 +42,6 @@ export default {
     Top100
   },
   created() {
-    this.searchStreamers();
     api.getTop100()
       .then(response => 
         this.results = response.data);
