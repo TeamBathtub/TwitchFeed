@@ -5,7 +5,6 @@
         <FavoriteItem v-for="favorite in favorites"
           :key="favorite.id"
           :favorite="favorite"
-          :onDelete="handleDelete"
            />
       </ul>
   </section>

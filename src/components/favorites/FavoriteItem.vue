@@ -27,15 +27,6 @@ export default {
         this.twitchFavorite = response.channels[0];
       });
   },
-  methods: {
-    handleDelete() {
-      api.deleteStreamer(this.favorite.userId)
-        .then(() => {
-          console.log('here from delete');
-          this.$router.push('/favorites');
-        });
-    }
-  },
   components: {
     FavoriteDisplay
   },
