@@ -56,8 +56,8 @@ export default {
       });
   },
 
-  getStreamers(searchTerm = '') {
-    return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
+  getStreamerDetails(searchTerm = '') {
+    return fetch(`https://api.twitch.tv/kraken/search/channels?query=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -67,8 +67,8 @@ export default {
       .then(response => response.json());
   },
 
-  getStreamerDetails(searchTerm = '') {
-    return fetch(`https://api.twitch.tv/kraken/search/channels?query=${encodeURIComponent(searchTerm)}`, {
+  getStreamers(searchTerm = '') {
+    return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
