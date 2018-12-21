@@ -104,16 +104,6 @@ export default {
           });
       });
   },
-  // getStreamerId(id) {
-  //   return fetch(`/api/favorites/${id}`, {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Authorization': token
-  //     }
-  //   })
-  //     .then(response => response.json()); 
-  // },
   deleteStreamer(name) {
     return fetch(`/api/favorites/${name}`, {
       method: 'DELETE',
