@@ -34,10 +34,7 @@ export default {
     handleDelete(name) {
       api.deleteStreamer(name)
         .then(() => {
-          this.$router.push('/favorites');
-          // this.favorites = this.favorites.filter(favorite => {
-          //   favorite.display_name !== name;
-          // });
+          this.$router.go('/favorites');
         });
     }
   }
