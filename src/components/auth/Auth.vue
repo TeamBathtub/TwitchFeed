@@ -43,7 +43,7 @@
         </label>
         <label>
           Password:
-          <input  v-model="profile.password" required>
+          <input  type="password" v-model="profile.password" required>
         </label>
         <label>
           <button class="signUp">Sign Up</button>
