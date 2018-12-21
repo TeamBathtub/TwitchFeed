@@ -13,6 +13,7 @@ export default {
     index: Number,
     onAdd: Function
   }, 
+
   methods: {
     handleAdd() {
       this.onAdd(this.result);

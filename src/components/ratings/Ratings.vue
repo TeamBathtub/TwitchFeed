@@ -6,8 +6,7 @@
       :randomName="randomName"
       :randomThumbnail="randomThumbnail"
       :url="url"
-      :onAdd="handleAdd"
-    />
+      :onAdd="handleAdd" />
   </section>
 </template>
 
@@ -25,6 +24,7 @@ export default {
       url: null
     };
   },
+
   created() {
     api.getTopStreamers()
       .then(response => {
@@ -33,18 +33,21 @@ export default {
       .then(() => this.labels = this.getLabels())
       .then(() => this.getRandomStreamer());
   },
+
   methods: {
     getLabels() {
       return this.streams.map(stream => {
         return stream.user_name;
       });
     },
+
     getRandomStreamer() {
       let index = Math.floor((Math.random() * this.streams.length) + 1);
       this.randomName = this.labels[index];
       this.getStreamerThumbnail();
       this.makeUrl();
     },
+
     getStreamerThumbnail() {
       api.getStreamers(this.randomName)
         .then(response => {
@@ -54,14 +57,17 @@ export default {
           this.error = err.message;
         });
     },
+
     makeUrl() {
       return this.url = 'https://www.twitch.tv/' + this.randomName;
     },
+
     handleAdd(rating) {
       api.addRating(rating)
         .then(() => this.getRandomStreamer());
     }
   },
+
   components: {
     RatingsDisplay
   }
@@ -92,5 +98,3 @@ button {
   margin-bottom: 10vh;
 }
 </style>
-
-

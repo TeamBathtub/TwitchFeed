@@ -79,6 +79,7 @@ export function generateChart(chartId, chartType) {
         );
       }
     },
+    
     beforeDestroy() {
       if(this.$data._chart) {
         this.$data._chart.destroy();

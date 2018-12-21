@@ -1,13 +1,12 @@
 <template>
-    <div id="randomStreamer">
-      <h2>{{ randomName }}</h2>
-        <img :src="randomThumbnail">
-        <a :href="url">View Stream</a>
-      <RatingsForm
-        :randomName="randomName"
-        :onAdd="onAdd"
-      />
-    </div>
+  <div id="randomStreamer">
+    <h2>{{ randomName }}</h2>
+    <img :src="randomThumbnail">
+    <a :href="url">View Stream</a>
+    <RatingsForm
+      :randomName="randomName"
+      :onAdd="onAdd" />
+  </div>
 </template>
 
 <script>
@@ -20,6 +19,7 @@ export default {
     url: String,
     onAdd: Function
   },
+
   components: {
     RatingsForm
   }

@@ -5,9 +5,9 @@
         <BarChart
         v-if="labels && viewerCounts" 
         :labels="labels"
-        :viewerCounts="viewerCounts"
-        />
+        :viewerCounts="viewerCounts" />
     </div>
+
     <div id="list">
       <StreamsList :streams="streams" />
     </div>
@@ -18,6 +18,7 @@
 import BarChart from './BarChart';
 import StreamsList from './StreamsList';
 import api from '../../services/api';
+
 export default {
   data() {
     return {
@@ -27,10 +28,12 @@ export default {
       user: null
     };
   },
+
   components: {
     BarChart,
     StreamsList
   },
+
   created() {
     api.getTopStreamers()
       .then(response => {
@@ -39,12 +42,14 @@ export default {
       .then(() => this.labels = this.getLabels())
       .then(() => this.viewerCounts = this.getViewerCounts());
   },
+
   methods: {
     getLabels() {
       return this.streams.map(stream => {
         return stream.user_name;
       });
     },
+    
     getViewerCounts() {
       return this.streams.map(stream => {
         return stream.viewer_count;

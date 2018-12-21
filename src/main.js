@@ -8,12 +8,6 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2);
 
-Vue.directive('focus', {
-  inserted(el) {
-    el.focus();
-  }
-});
-
 new Vue({
   router,
   render: h => h(App),

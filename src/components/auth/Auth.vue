@@ -3,9 +3,11 @@
     <div class="video-wrap">
       <video src="../../../assets/twitchClip.mp4" autoplay="" loop="" controls muted></video>
     </div>
+
     <div class="overlay" v-if="method === 'signin'">
       <img src="../../../assets/twitch-logo-purple.png" alt="">
       <h1> Welcome to Twitch Feed </h1>
+
       <form class="form" @submit.prevent="handleSignInSubmit(profile)">
         <label>
           Username: 
@@ -15,16 +17,18 @@
           Password:
           <input type="password" v-model="profile.password" required> 
         </label>
-          <button class="signIn"> Sign In </button>
-    </form>
-         <p>
+        <button class="signIn"> Sign In </button>
+      </form>
+
+      <p>
         Need to Register?
         <button class="signUp" @click="method = 'signup'"> Sign Up </button>
-        </p>
+      </p>
     </div>
-      <div class="overlay" v-else>
-        <h2>Sign Up</h2>
-        <form class="form" @submit.prevent="handleSignUpSubmit(profile)"> 
+
+    <div class="overlay" v-else>
+      <h2>Sign Up</h2>
+      <form class="form" @submit.prevent="handleSignUpSubmit(profile)"> 
         <label>
           Name:
           <input v-model="profile.firstName" required>
@@ -46,7 +50,8 @@
         </label>
       </form> 
     </div>
-     <pre v-if="error">{{error}}</pre>
+
+    <pre v-if="error">{{error}}</pre>
   </section>
 </template>
 
@@ -56,6 +61,7 @@ export default {
     onSignIn: Function,
     onSignUp: Function
   },
+
   data() {
     return {
       method: 'signin',
@@ -68,6 +74,7 @@ export default {
       } 
     };
   }, 
+
   methods: {
     handleSignInSubmit() {
       this.error = '',
@@ -76,6 +83,7 @@ export default {
           this.error = error.error;
         });
     },
+
     handleSignUpSubmit() {
       this.error = '';
       this.onSignUp(this.profile)
@@ -149,4 +157,3 @@ img {
   display: block;
 }
 </style>
-

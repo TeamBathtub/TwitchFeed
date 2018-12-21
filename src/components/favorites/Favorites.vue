@@ -5,8 +5,7 @@
         <FavoriteItem v-for="favorite in favorites"
           :key="favorite.id"
           :favorite="favorite"
-          :onDelete="handleDelete"
-           />
+          :onDelete="handleDelete" />
       </ul>
   </section>
 </template>
@@ -21,15 +20,18 @@ export default {
       favorites: null
     };
   },
+
   components: {
     FavoriteItem
   },
+
   created() {
     api.getStreamer()
       .then(response => {
         return this.favorites = response; 
       });
   },
+
   methods: {
     handleDelete(name) {
       api.deleteStreamer(name)
@@ -70,5 +72,3 @@ section {
   margin: 20px;
 }
 </style>
-
-

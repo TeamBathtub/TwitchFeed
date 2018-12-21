@@ -1,9 +1,9 @@
 <template>
-<section>
-  <li>
-    {{favorite.user_name}}
-  </li>
-</section>
+  <section>
+    <li>
+      {{favorite.user_name}}
+    </li>
+  </section>
 </template>
 
 <script>

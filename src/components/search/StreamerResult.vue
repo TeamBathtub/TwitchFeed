@@ -20,10 +20,12 @@ export default {
       favorite: false
     };
   },
+
   props: {
     streamer: Object,
     onAdd: Function
   },
+
   methods: {
     handleSubmit() {
       const streamer = this.streamer;

@@ -3,8 +3,7 @@
     <li class="container">
       <FavoriteDisplay 
         :twitchFavorite="twitchFavorite"
-        :onDelete="onDelete"
-      />
+        :onDelete="onDelete" />
     </li>
   </section>
 </template>
@@ -18,16 +17,19 @@ export default {
       twitchFavorite: null
     };
   },
+
   props: {
     favorite: Object,
     onDelete: Function
   },
+
   created() {
     api.getStreamerDetails(this.favorite.userName)
       .then(response => {
         this.twitchFavorite = response.channels[0];
       });
   },
+  
   components: {
     FavoriteDisplay
   } 

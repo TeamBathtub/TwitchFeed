@@ -16,6 +16,7 @@ export default {
     onClose: Function, 
     stream: Object
   },
+
   data() {
     return {
       show: false,
@@ -23,6 +24,7 @@ export default {
       thumbnails: null
     };
   }, 
+  
   created() {
     this.documentListener = event => {
       if(event.keyCode === 27) {

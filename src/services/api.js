@@ -18,6 +18,7 @@ export default {
   setToken(t) {
     token = t;
   },
+
   getTopStreamers() {
     return fetch('/api/twitch', {
       method: 'GET',
@@ -41,6 +42,7 @@ export default {
           });
       });
   }, 
+
   signIn(credentials) {
     return fetch('/api/auth/signin', getOptions ('POST', credentials))
       .then(response => {
@@ -53,6 +55,7 @@ export default {
           });
       });
   },
+
   getStreamers(searchTerm = '') {
     return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
@@ -63,6 +66,7 @@ export default {
     })
       .then(response => response.json());
   },
+
   getStreamerDetails(searchTerm = '') {
     return fetch(`https://api.twitch.tv/kraken/search/channels?query=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
@@ -84,6 +88,7 @@ export default {
     })
       .then(response => response.json());
   },
+
   addStreamer(favorite) {
     return fetch('/api/favorites', {
       method: 'POST', 
@@ -104,6 +109,7 @@ export default {
           });
       });
   },
+
   deleteStreamer(name) {
     return fetch(`/api/favorites/${name}`, {
       method: 'DELETE',
@@ -114,6 +120,7 @@ export default {
     })
       .then(response => response.json());
   }, 
+
   getStreamer() {
     return fetch('/api/favorites', {
       method: 'GET',
@@ -124,6 +131,7 @@ export default {
     })
       .then(response => response.json()); 
   },
+
   addRating(rating) {
     return fetch('/api/ratings', getOptions ('POST', rating))
       .then(response => {
@@ -136,14 +144,14 @@ export default {
           });
       });
   },
+
   getStats() {
     return fetch('/api/ratings/stats', getOptions('GET'))
       .then(response => response.json());
-  }, 
+  },
+
   getAllFavorites() {
     return fetch('/api/community', getOptions('Get'))
       .then(response => response.json()); 
   }
 };
-
-
