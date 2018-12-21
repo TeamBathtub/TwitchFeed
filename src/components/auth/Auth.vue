@@ -102,6 +102,7 @@ input {
   width: 200px;
   margin-right: 10px;
   border-radius: 10px;
+  font-size: 20px;
 }
 section {
   text-align: center;
