@@ -2,7 +2,7 @@
   <div id="randomStreamer">
     <h2>{{ randomName }}</h2>
     <img :src="randomThumbnail">
-    <a :href="url">View Stream</a>
+    <a :href="url" target="_blank">View Stream</a>
     <RatingsForm
       :randomName="randomName"
       :onAdd="onAdd" />

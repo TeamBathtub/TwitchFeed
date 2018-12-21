@@ -8,7 +8,7 @@
         </p>
         <button @click="handleSubmit">Add to Favorites</button>
       </div>
-      <img v-bind:src="streamer.profile_image_url">
+      <img :src="streamer.profile_image_url">
     </div>
   </li>
 </template>

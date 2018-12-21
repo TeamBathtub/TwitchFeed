@@ -1,13 +1,15 @@
 <template>
   <section class="streamers">
-    <h1>Search</h1>
-    <StreamerSearch v-bind:onSearch="handleSearch" v-bind:search="search"/>
     
+    <h1>Search</h1>
+    <StreamerSearch 
+      :onSearch="handleSearch" 
+      :search="search"/>
     <div class="search-container">
       <ul v-if="streamer">
         <StreamerResult 
-          v-bind:streamer="streamer"
-          v-bind:onAdd="handleAdd"/>
+          :streamer="streamer"
+          :onAdd="handleAdd"/>
       </ul>
       <div v-else class="no-results">
         <p>No results found. Try another search.</p>
@@ -15,7 +17,9 @@
     </div>
 
     <h2>Browse Top 100 Streamers</h2>
-    <Top100 class="grid" v-bind:onAdd="handleAdd" v-bind:results="results"></Top100>
+    <Top100 class="grid" 
+      :onAdd="handleAdd" 
+      :results="results" />
   </section>
 </template>
 

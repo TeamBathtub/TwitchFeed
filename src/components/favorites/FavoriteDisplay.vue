@@ -2,7 +2,7 @@
   <section>
     <h2 class="info">{{twitchFavorite.display_name}}</h2>
       <div v-if="twitchFavorite.profile_banner">
-        <img v-bind:src="twitchFavorite.profile_banner">
+        <img :src="twitchFavorite.profile_banner">
       </div>
       <div v-else>
         <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
@@ -24,7 +24,7 @@
         <p><span>Views:</span><br/><br/>
           {{twitchFavorite.views}}
         </p>
-        <p><span><a v-bind:href="`${twitchFavorite.url}`" target="_blank">
+        <p><span><a :href="`${twitchFavorite.url}`" target="_blank">
           Stream Url</a></span>
         </p>
       </div>
