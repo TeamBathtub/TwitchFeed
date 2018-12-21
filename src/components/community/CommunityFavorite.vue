@@ -1,10 +1,8 @@
 <template>
 <section>
-    <ul>
       <li>
       {{favorite.user_name}}
       </li>
-    </ul>
 </section>
 </template>
 
@@ -19,6 +17,11 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+li {
+  background-color: rgba(177, 158, 214, 0.2);
+  box-shadow: 1pt 1pt 1pt black;
+  text-align: center;
+  width: 20vw;
+}
 </style>

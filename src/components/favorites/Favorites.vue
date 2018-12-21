@@ -43,7 +43,7 @@ h1 {
   font-size: 6vh;
   margin: 2vh 35vw 2vh 35vw;
   border: solid gray 2px;
-  border-radius: 20vw;
+  border-radius: 10vw;
   color: gray;
   width: 25vw;
   justify-content: center;
