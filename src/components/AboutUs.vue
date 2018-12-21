@@ -9,7 +9,7 @@
             <div class="text">Tyler Corbett</div>
           </div>
       </div>
-      <p>Tyler's About</p>
+      <p>Video game and coffee enthusist. Proud father of two golden retrievers. @thetylercorbett</p>
     </div>
     <div class="person">
       <div class="container">
