@@ -1,8 +1,8 @@
 <template>
   <section>
     <h3>#{{index + 1}} {{result.user_name}}</h3>
-    <p> 👤{{result.viewer_count}}</p>
-    <button @click="handleAdd">❤️Add to Favorites</button>
+      <p> 👤{{result.viewer_count}}</p>
+      <button @click="handleAdd">❤️Add to Favorites</button>
   </section>
 </template>
 

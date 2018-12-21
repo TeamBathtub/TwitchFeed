@@ -2,11 +2,11 @@
   <section id="ratings">
     <h1>Ratings</h1>
     <RatingsDisplay
-    v-if="randomName"
-    :randomName="randomName"
-    :randomThumbnail="randomThumbnail"
-    :url="url"
-    :onAdd="handleAdd"
+      v-if="randomName"
+      :randomName="randomName"
+      :randomThumbnail="randomThumbnail"
+      :url="url"
+      :onAdd="handleAdd"
     />
   </section>
 </template>

@@ -5,7 +5,8 @@
         v-bind:key="index"
         v-bind:index="index"
         v-bind:result="result"
-        v-bind:onAdd="onAdd"/>
+        v-bind:onAdd="onAdd"
+      />
     </ul>
   </section>
 </template>
@@ -32,5 +33,4 @@ ul {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
-
 </style>
