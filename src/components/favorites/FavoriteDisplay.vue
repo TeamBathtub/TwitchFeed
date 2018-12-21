@@ -28,26 +28,26 @@
           Stream Url</a></span>
         </p>
       </div>
-    <button @click="handleDelete"> 🗑️ Delete </button>
+    <button @click="onDelete(twitchFavorite.display_name)"> 🗑️ Delete </button>
   </section>
 </template>
 
 <script>
-import api from '../../services/api';
+// import api from '../../services/api';
 export default {
   props: {
     twitchFavorite: Object,
     onDelete: Function
-  },
-  methods: {
-    handleDelete() {
-      api.deleteStreamer(this.twitchFavorite.display_name)
-        .then(() => {
-          this.$router.push('/favorites');
-
-        });
-    }
   }
+  // methods: {
+  //   handleDelete() {
+  //     api.deleteStreamer(this.twitchFavorite.display_name)
+  //       .then(() => {
+  //         this.$router.push('/favorites');
+
+  //       });
+  //   }
+  // }
 };
 </script>
 
