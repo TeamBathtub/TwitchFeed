@@ -93,6 +93,11 @@ export default {
   color:rgb(75, 56, 122);
   text-shadow: 1pt 3pt 1pt white;
   font-family: 'Acme', sans-serif;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 label {
   font-size: 20pt;
@@ -102,17 +107,11 @@ input {
   width: 200px;
   margin-right: 10px;
   border-radius: 10px;
+  font-size: 20px;
 }
 section {
   text-align: center;
   z-index: 99;
-}
-.wrapper {
-  height: 100%;
-  position: fixed;
-  width: 100%;
-  display: flex;
-  align-items: center;
 }
 .video-wrap {
   position: fixed;

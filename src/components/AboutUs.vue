@@ -2,7 +2,6 @@
   <section>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <h1>About Us</h1>
-
     <div class="person">
       <div class="container">
         <img src="../../assets/tyler.jpg" alt="Avatar" class="image" style="width:100%">
@@ -12,7 +11,6 @@
       </div>
       <p>Tyler's About</p>
     </div>
-
     <div class="person">
       <div class="container">
         <img src="../../assets/marcy.jpg" alt="Avatar" class="image" style="width:100%">
@@ -20,19 +18,20 @@
             <div class="text">Marcy Silverman</div>
           </div>
       </div>
-      <p>Budding Developer that loves naping, working out, eating, and petting dogs.</p>
+      <p>Budding Developer that loves napping, working out, eating, and petting dogs.</p>
     </div>
-
     <div class="person">
       <div class="container">
-        <img src="../../assets/kristen.jpg" alt="Avatar" class="image" style="width:100%">
+        <img src="../../assets/kristin.jpg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
-            <div class="text">Kristen Hortsch</div>
+            <div class="text">Kristin Hortsch</div>
           </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempore, reiciendis voluptas amet commodi impedit at corrupti esse nisi minus voluptates repellat vitae excepturi assumenda officia optio ipsam enim pariatur.</p>
+      <p>
+        Avid laugher, sports fan, stalker of cats, and coding (Codewars) addict!<br/>
+        <a href="https://twitter.com/KristinMH33?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @KristinMH33</a>
+      </p>
     </div>
-
   </section>
 </template>
 
@@ -101,6 +100,5 @@ h1 {
   color: gray;
   width: 25vw;
   justify-content: center;
-
 }
 </style>

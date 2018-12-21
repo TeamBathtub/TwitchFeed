@@ -3,6 +3,7 @@
     <li class="container">
       <FavoriteDisplay 
         :twitchFavorite="twitchFavorite"
+        :onDelete="onDelete"
       />
     </li>
   </section>
@@ -29,7 +30,7 @@ export default {
   },
   components: {
     FavoriteDisplay
-  },
+  } 
 };
 </script>
 

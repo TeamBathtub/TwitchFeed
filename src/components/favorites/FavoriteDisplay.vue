@@ -9,15 +9,14 @@
       </div>
       <div class="info">
         <p><span>Online Status:</span></p>
-        <div v-if="twitchFavorite.game">
-            🔴 Online <br/>
-            <p><span>Currently:</span></p>
-            {{twitchFavorite.game}}
-        </div>
-        <div v-else>
-          Offline
-        </div>
-
+      <div v-if="twitchFavorite.game">
+          🔴 Online <br/>
+          <p><span>Currently:</span></p>
+          {{twitchFavorite.game}}
+      </div>
+      <div v-else>
+        Offline
+      </div> 
         <p><span>Followers:</span><br/><br/>
           {{twitchFavorite.followers}}
         </p>
@@ -28,23 +27,26 @@
           Stream Url</a></span>
         </p>
       </div>
-    <button @click="handleDelete"> 🗑️ Delete </button>
+    <button @click="onDelete(twitchFavorite.display_name)"> 🗑️ Delete </button>
   </section>
 </template>
 
 <script>
-import api from '../../services/api';
+// import api from '../../services/api';
 export default {
   props: {
     twitchFavorite: Object,
     onDelete: Function
-  },
-  methods: {
-    handleDelete() {
-      api.deleteStreamer(this.twitchFavorite.display_name);
-      this.$router.push('/favorites');
-    }
   }
+  // methods: {
+  //   handleDelete() {
+  //     api.deleteStreamer(this.twitchFavorite.display_name)
+  //       .then(() => {
+  //         this.$router.push('/favorites');
+
+  //       });
+  //   }
+  // }
 };
 </script>
 

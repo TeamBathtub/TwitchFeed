@@ -11,7 +11,6 @@ const getOptions = (method, data) => {
   }
   if(token) {
     options.headers.Authorization = token;
-    console.log('got here', token); 
   }
   return options;
 };
@@ -55,7 +54,6 @@ export default {
       });
   },
   getStreamers(searchTerm = '') {
-    console.log('search term', searchTerm);
     return fetch(`https://api.twitch.tv/helix/users?login=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
@@ -66,7 +64,6 @@ export default {
       .then(response => response.json());
   },
   getStreamerDetails(searchTerm = '') {
-    console.log('search term', searchTerm);
     return fetch(`https://api.twitch.tv/kraken/search/channels?query=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
@@ -107,18 +104,7 @@ export default {
           });
       });
   },
-  getStreamerId(id) {
-    return fetch(`/api/favorites/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': token
-      }
-    })
-      .then(response => response.json()); 
-  },
   deleteStreamer(name) {
-    console.log('hello');
     return fetch(`/api/favorites/${name}`, {
       method: 'DELETE',
       headers: {

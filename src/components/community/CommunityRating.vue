@@ -1,8 +1,8 @@
 <template>
-       <tr>
-         <td> {{stat.user_name}} </td>
-         <td> {{stat.average}} </td>
-       </tr>
+  <tr>
+    <td> {{stat.user_name}} </td>
+    <td> {{stat.average}} </td>
+  </tr>
 </template>
 
 <script> 

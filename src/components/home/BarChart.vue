@@ -2,7 +2,6 @@
 
 <script>
 import { Bar } from './BaseCharts';
-
 export default {
   props: {
     labels: Array,
@@ -20,13 +19,7 @@ export default {
         },
       ]
     }, { responsive: true, maintainAspectRatio: false });
-  },
-  watch: {
-    
   }
 };
 </script>
 
-<style>
-
-</style>

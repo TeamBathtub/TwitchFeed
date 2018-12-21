@@ -52,7 +52,6 @@ export default {
     handleSignIn(credentials) {
       return api.signIn(credentials)
         .then(user => {
-          console.log(user);
           this.setUser(user);
         });
     },

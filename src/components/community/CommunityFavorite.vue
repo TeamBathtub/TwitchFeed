@@ -1,8 +1,8 @@
 <template>
 <section>
-      <li>
-      {{favorite.user_name}}
-      </li>
+  <li>
+    {{favorite.user_name}}
+  </li>
 </section>
 </template>
 
@@ -10,9 +10,6 @@
 export default {
   props: {
     favorite: Object
-  },
-  created() {
-    console.log(this.favorite);
   }
 };
 </script>
