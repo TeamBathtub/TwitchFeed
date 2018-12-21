@@ -74,7 +74,7 @@ export default {
             alert('Favorited already');
           }
           else {
-            alert('Favorite has been added');
+            this.$swal('Done!', 'Added to your favorites', 'OK');
           }
         });
     }
