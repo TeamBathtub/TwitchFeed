@@ -27,7 +27,10 @@
             <div class="text">Kristin Hortsch</div>
           </div>
       </div>
-      <p>Avid laugher, sports fan, stalker of cats, and coding (Codewars) addict!</p>
+      <p>
+        Avid laugher, sports fan, stalker of cats, and coding (Codewars) addict!<br/>
+        <a href="https://twitter.com/KristinMH33?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @KristinMH33</a>
+      </p>
     </div>
   </section>
 </template>
@@ -97,6 +100,5 @@ h1 {
   color: gray;
   width: 25vw;
   justify-content: center;
-
 }
 </style>
