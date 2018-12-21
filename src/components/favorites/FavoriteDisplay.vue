@@ -41,8 +41,11 @@ export default {
   },
   methods: {
     handleDelete() {
-      api.deleteStreamer(this.twitchFavorite.display_name);
-      this.$router.push('/favorites');
+      api.deleteStreamer(this.twitchFavorite.display_name)
+        .then(() => {
+          this.$router.push('/favorites');
+
+        });
     }
   }
 };
