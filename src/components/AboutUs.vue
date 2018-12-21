@@ -9,7 +9,10 @@
             <div class="text">Tyler Corbett</div>
           </div>
       </div>
-      <p>Video game and coffee enthusist. Proud father of two golden retrievers. @thetylercorbett</p>
+      <p>
+        Video game and coffee enthusist. Proud father of two golden retrievers.<br/>
+        <a href="https://twitter.com/thetylercorbett?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thetylercorbett</a>
+      </p>
     </div>
     <div class="person">
       <div class="container">
