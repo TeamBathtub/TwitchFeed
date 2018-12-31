@@ -3,7 +3,7 @@ import Home from './components/home/Home';
 import Streamers from './components/search/Streamers.vue';
 import Favorites from './components/favorites/Favorites.vue';
 import Community from './components/community/Community.vue';
-import AboutUs from './components/AboutUs';
+import AboutUs from './components/about/AboutUs';
 import Ratings from './components/ratings/Ratings.vue';
 
 export default new VueRouter ({

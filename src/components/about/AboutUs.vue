@@ -1,46 +1,37 @@
 <template>
   <section>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- Put this in index.html! -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet"> -->
     <h1>About Us</h1>
 
-    <div class="person">
-      <div class="container">
-        <img src="../../assets/tyler.jpg" alt="Avatar" class="image" style="width:100%">
-        <div class="middle">
-          <div class="text">Tyler Corbett</div>
-        </div>
-      </div>
-      <p>
-        Video game and coffee enthusist. Proud father of two golden retrievers.<br/>
+    <Bio name="Tyler Corbett" image="../../assets/tyler.jpg">
+        Video game and coffee enthusist. Proud father of two golden retrievers.
+        <br/>
         <a href="https://twitter.com/thetylercorbett?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @thetylercorbett</a>
-      </p>
-    </div>
+    </Bio>
 
-    <div class="person">
-      <div class="container">
-        <img src="../../assets/marcy.jpg" alt="Avatar" class="image" style="width:100%">
-        <div class="middle">
-          <div class="text">Marcy Silverman</div>
-        </div>
-      </div>
-      <p>Budding Developer that loves napping, working out, eating, and petting dogs.</p>
-    </div>
+    <Bio name="Marcy Silverman" image="../../assets/marcy.jpg">
+      Budding Developer that loves napping, working out, eating, and petting dogs.
+    </Bio>
 
-    <div class="person">
-      <div class="container">
-        <img src="../../assets/kristin.jpg" alt="Avatar" class="image" style="width:100%">
-        <div class="middle">
-          <div class="text">Kristin Hortsch</div>
-        </div>
-      </div>
-      <p>
-        Avid laugher, sports fan, stalker of cats, and coding (Codewars) addict!<br/>
+    <Bio name="Kristin Hortsch" image="../../assets/kristin.jpg">
+        Avid laugher, sports fan, stalker of cats, and coding (Codewars) addict!
+        <br/>
         <a href="https://twitter.com/KristinMH33?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @KristinMH33</a>
-      </p>
-    </div>
+    </Bio>
   </section>
 </template>
 
+<script>
+import Bio from './Bio';
+
+export default {
+  components: {
+    Bio
+  }
+}
+
+</script>
 <style scoped>
 section {
   font-family: 'Permanent Marker', cursive;

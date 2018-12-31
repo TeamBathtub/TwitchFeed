@@ -1,43 +1,46 @@
 <template>
   <section>
-    <h2 class="info">{{twitchFavorite.display_name}}</h2>
-      <div v-if="twitchFavorite.profile_banner">
-        <img :src="twitchFavorite.profile_banner">
+    <h2 class="info">{{favorite.display_name}}</h2>
+    <img class="banner" :src="banner">
+
+    <div class="info">
+      <h3>Online Status:</h3>
+      <div v-if="favorite.game">
+        <p>🔴 Online</p>
+        <p>Currently:</p>
+        <p>{{favorite.game}}</p>
       </div>
       <div v-else>
-        <img src="https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg">
-      </div>
+        <p>Offline</p>
+      </div> 
 
-      <div class="info">
-        <p><span>Online Status:</span></p>
-        <div v-if="twitchFavorite.game">
-            🔴 Online <br/>
-            <p><span>Currently:</span></p>
-            {{twitchFavorite.game}}
-        </div>
-        <div v-else>
-          Offline
-        </div> 
-        <p><span>Followers:</span><br/><br/>
-          {{twitchFavorite.followers}}
-        </p>
-        <p><span>Views:</span><br/><br/>
-          {{twitchFavorite.views}}
-        </p>
-        <p><span><a :href="`${twitchFavorite.url}`" target="_blank">
-          Stream Url</a></span>
-        </p>
-      </div>
+      <h3>Followers:</h3>
+      <p>{{favorite.followers}}</p>
       
-    <button @click="onDelete(twitchFavorite.display_name)"> 🗑️ Delete </button>
+      <h3>Views:<h3>
+      <p>{{favorite.views}}</p>
+      <p>
+        <a :href="`${favorite.url}`" target="_blank">
+        Stream Url
+        </a>
+      </p>
+    </div>
+      
+    <button @click="onDelete(favorite.display_name)"> 🗑️ Delete </button>
   </section>
 </template>
 
 <script>
 export default {
   props: {
-    twitchFavorite: Object,
+    // much more readable as just "favorite"
+    favorite: Object,
     onDelete: Function
+  },
+  computed: {
+    banner() {
+      return favorite.profile_banner || 'https://i.ytimg.com/vi/GY8PkikQ8ZE/maxresdefault.jpg';
+    }
   }
 };
 </script>

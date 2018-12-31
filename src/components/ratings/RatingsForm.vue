@@ -1,11 +1,9 @@
 <template>
   <div>
     <form @submit.prevent="handleSubmit">
-      1<input type="radio" value="1" name="vote" v-model="voteValue">
-      2<input type="radio" value="2" name="vote" v-model="voteValue">
-      3<input type="radio" value="3" name="vote" v-model="voteValue">
-      4<input type="radio" value="4" name="vote" v-model="voteValue">
-      5<input type="radio" value="5" name="vote" v-model="voteValue">
+      <label v-for="n in 5" :key="n">
+        {{n}}<input type="radio" :value="n" name="vote" v-model="voteValue">
+      </label>
       <button>Vote</button>
     </form>
   </div>
@@ -28,6 +26,7 @@ export default {
     handleSubmit() {
       let currentRating = { userName: this.randomName, score: this.voteValue };
       this.onAdd(currentRating);
+      // hmm, not sure why you have this
       this.voteValue = null;
     }
   }

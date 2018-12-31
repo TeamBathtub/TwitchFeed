@@ -1,6 +1,6 @@
 <template>
-  <section id="container"> 
-    <h1>Community</h1>
+  <section class="container"> 
+    <h2>Community</h2>
     <table>
       <thead>
        <tr>
@@ -16,13 +16,14 @@
         />
      </tbody>
     </table>
-    <h1>Community Favorites</h1>
-  <ul>
-    <CommunityFavorite 
-      v-for="favorite in favorites"
-      :favorite="favorite"
-      :key="favorite.user_name" />
-  </ul>
+
+    <h2>Community Favorites</h2>
+    <ul>
+      <CommunityFavorite 
+        v-for="favorite in favorites"
+        :favorite="favorite"
+        :key="favorite.user_name" />
+    </ul>
   </section>
 </template>
 
@@ -63,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-#container {
+.container {
   display: flex;
   flex-flow: column;
 }

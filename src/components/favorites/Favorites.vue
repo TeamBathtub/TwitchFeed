@@ -36,6 +36,8 @@ export default {
     handleDelete(name) {
       api.deleteStreamer(name)
         .then(() => {
+          // Don't reload page, just remove this favorite
+          // from the array
           this.$router.go('/favorites');
         });
     }

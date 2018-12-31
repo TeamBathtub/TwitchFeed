@@ -17,13 +17,14 @@ export default {
     stream: Object
   },
 
-  data() {
-    return {
-      show: false,
-      name: null,
-      thumbnails: null
-    };
-  }, 
+  // These aren't used
+  // data() {
+  //   return {
+  //     show: false,
+  //     name: null,
+  //     thumbnails: null
+  //   };
+  // }, 
   
   created() {
     this.documentListener = event => {
