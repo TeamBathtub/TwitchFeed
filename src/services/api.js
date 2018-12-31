@@ -20,11 +20,14 @@ export default {
   },
 
   getTopStreamers() {
+    // I don't know why this one call is going thru server. If twitch supports
+    // CORS, just connect their API directly
     return fetch('/api/twitch', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y',
+        // Don't include the client id here, server already knows about it
+        // 'Content-Type': 'application/json',
+        // 'Client-ID': '8sb2kt99biht5q3k79k7hsejyj0q2y',
         'Authorization': token
       }
     })
@@ -56,6 +59,7 @@ export default {
       });
   },
 
+  // wait, why is one call proxied thru the server, but the rest are here?
   getStreamerDetails(searchTerm = '') {
     return fetch(`https://api.twitch.tv/kraken/search/channels?query=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
@@ -114,7 +118,8 @@ export default {
     return fetch(`/api/favorites/${name}`, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
+        // no body
+        // 'Content-Type': 'application/json',
         'Authorization': token
       }
     })

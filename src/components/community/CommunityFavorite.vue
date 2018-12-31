@@ -1,9 +1,6 @@
 <template>
-  <section>
-    <li>
-      {{favorite.user_name}}
-    </li>
-  </section>
+  <!-- This is directly under the <ul>, so use <li> -->
+  <li>{{favorite.user_name}}</li>
 </template>
 
 <script>

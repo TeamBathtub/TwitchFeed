@@ -1,25 +1,26 @@
 <template>
   <section class="streamers">
-    
-    <h1>Search</h1>
+    <!-- h1 is typically for Title of whole app -->
+    <h2>Search</h2>
     <StreamerSearch 
       :onSearch="handleSearch" 
       :search="search"/>
-    <div class="search-container">
-      <ul v-if="streamer">
-        <StreamerResult 
-          :streamer="streamer"
-          :onAdd="handleAdd"/>
-      </ul>
-      <div v-else class="no-results">
-        <p>No results found. Try another search.</p>
-      </div>
+    <!-- container element not necessary -->  
+    <ul v-if="streamer">
+      <StreamerResult 
+        :streamer="streamer"
+        :onAdd="handleAdd"/>
+    </ul>
+    <div v-else class="no-results">
+      <p>No results found. Try another search.</p>
     </div>
 
     <h2>Browse Top 100 Streamers</h2>
-    <Top100 class="grid" 
+    <!-- Generally, don't apply classes from parent -->
+    <Top100 
       :onAdd="handleAdd" 
       :results="results" />
+
   </section>
 </template>
 
@@ -69,6 +70,7 @@ export default {
     searchStreamers() {
       api.getStreamers(this.search)
         .then(response => {
+          // just the first one?
           this.streamer = response.data[0];
         })
         .catch(err => {

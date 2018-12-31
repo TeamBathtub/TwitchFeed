@@ -11,7 +11,7 @@
      <RouterLink to="/about">About Us</RouterLink>
      <a href="#" @click="handleLogout">Logout</a>
    </nav>
-    <span id="user" v-if="user"> 
+    <span class="user" v-if="user"> 
       Hello {{user.username}}!
     </span>
   </header>
@@ -104,7 +104,9 @@ body {
   margin: 0;
   font-family: 'Mukta', sans-serif;
 }
-#user {
+
+/* stick with classes in components! */
+.user {
   display: flex;
   justify-content: center;
   padding: 1vh;

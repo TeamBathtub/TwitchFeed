@@ -1,11 +1,9 @@
 <template>
-  <section v-if="twitchFavorite">
-    <li class="container">
-      <FavoriteDisplay 
-        :twitchFavorite="twitchFavorite"
-        :onDelete="onDelete" />
-    </li>
-  </section>
+  <li v-if="twitchFavorite" class="container">
+    <FavoriteDisplay 
+      :twitchFavorite="twitchFavorite"
+      :onDelete="onDelete" />
+  </li>
 </template>
 
 <script>
@@ -26,6 +24,7 @@ export default {
   created() {
     api.getStreamerDetails(this.favorite.userName)
       .then(response => {
+        // why just the first one?
         this.twitchFavorite = response.channels[0];
       });
   },
